@@ -31,7 +31,7 @@ const warningName = document.querySelector(".warningName");
 async function apiUserInfo(name, studentNumber) {
   try {
     const res = await axios.get(
-      "http://hellofriend-eulji.site:8080/api/users/check-info",
+      "https://hellofriend-eulji.site/api/users/check-info",
       {
         params: {
           name: name,
