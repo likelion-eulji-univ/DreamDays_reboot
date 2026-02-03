@@ -1,0 +1,242 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+.black {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 1s;
+}
+
+.main {
+    box-sizing: border-box;
+    width: 100vw;
+    overflow-y: auto;
+    height: 100vh;
+    background-color: #1C1B1A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loadingPage {
+    max-width: 658px;
+    min-width: 456px;
+    max-height: 61.05px;
+    width: 35%;
+}
+
+.helloFriends {
+    width: 312px;
+    height: 24px;
+
+    margin-bottom: 26px;
+}
+
+.logoLion {
+    margin-top: 130px;
+    margin-bottom: 130px;
+    transition: 1s;
+}
+
+@media all and (max-height:900px) {
+    .black {
+        padding-top: 150px;
+        padding-bottom: 50px;
+    }
+
+    .helloFriends {
+        margin-top: 100px;
+    }
+}
+
+
+@media all and (max-width:479px) {
+    .black {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .main {
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: flex-start;
+    }
+
+    .helloFriends {
+        margin-top: 120px;
+        height: 10px;
+    }
+
+    .loadingPage {
+        height: 19px;
+    }
+
+    .logoLion {
+        width: 35%;
+        margin-top: 20%;
+    }
+}
+
+
+@media all and (min-width:480px) and (max-width:1024px) {
+    .black {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .main {
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: flex-start;
+
+    }
+
+    .loadingPage {
+        max-height: 27px;
+    }
+
+    .helloFriends {
+        margin-top: 20vh;
+        height: 15px;
+    }
+
+}

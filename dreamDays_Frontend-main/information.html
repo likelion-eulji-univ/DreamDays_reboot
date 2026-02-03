@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <link rel="stylesheet" href="checkInfo.css">
+    <link rel="stylesheet" href="information.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="main">
+        <section class="top">
+            <div class="hf">
+                <img src=img/hf.svg>
+            </div>
+            <div class="if_reg">
+                <img src=img/if_reg.svg>
+            </div>
+        </section>
+
+        <section class="middle">
+            <button class="if_bt" id="registerBtn"> 정보등록하기 </button>
+        </section>
+
+        <section class="ip_form" id="infoForm" style="display: none;">
+            <form onsubmit="return inputValues();" id="form">
+                <div class="form_all_ct">
+                    <section class="form_ct">
+                        <div class="name_ct">
+                            <div class="name"> 이름 </div>
+                            <input type="text" id="ip_name" name="name" placeholder="이름을 입력하세요.">
+                            <div class="waring"> 이름을 입력해주세요. </div>
+                        </div>
+                    </section>
+
+
+                    <section class="form_ct">
+                        <div class="name_ct">
+                            <div class="student"> 학번 </div>
+                            <input type="text" id="ip_student" class="ip_st" name="studentNumber" minlength="10"
+                                maxlength="10" placeholder="학번을 입력하세요.">
+                            <div class="waring"> 학번을 입력해주세요. </div>
+                        </div>
+                    </section>
+
+                    <section class="form_ct">
+                        <div class="name_ct">
+                            <div class="insta_id"> 인스타 ID </div>
+                            <input type="text" id="ip_instaid" class="ip_id" name="instagramId"
+                                placeholder="인스타 ID를 입력하세요.">
+                            <div class="waring"> 인스타 ID를 입력해주세요. </div>
+                        </div>
+                    </section>
+
+                    <section class="form_ct">
+                        <div class="name_ct">
+                            <div class="age"> 나이 </div>
+                            <input type="text" id="ip_age" name="age" maxlength="2" placeholder="나이를 입력하세요.">
+                            <div class="waring"> 나이를 입력해주세요. </div>
+                        </div>
+                    </section>
+
+                    <section class="form_ct">
+                        <div class="name_ct">
+                            <div class="gender"> 성별 </div>
+                            <div class="ip_ct">
+                                <div class="man_ct">
+                                    <input type="radio" name="gender" id="men_ck">
+                                    <div class="gender_man"> 남성 </div>
+                                </div>
+                                <div class="women_ct">
+                                    <input type="radio" name="gender" id="women_ck">
+                                    <div class="gender_woman"> 여성 </div>
+                                </div>
+                            </div>
+                            <div class="waring"> 성별을 선택해주세요. </div>
+                        </div>
+                    </section>
+
+                    <section class="form_ct">
+                        <div class="name_ct">
+                            <div class="major"> 학과</div>
+                            <select id="dp_major" name="department" placeholder="학과를 선택하세요.">
+                                <option value="" selected hidden> 학과를 선택해주세요 </option>
+                                <option value="첨단학부"> 첨단학부 </option>
+                                <option value="자연계열학부"> 자연계열학부 </option>
+                                <option value="인문사회계열학부"> 인문사회계열학부 </option>
+                                <option value="자유전공학부"> 자유전공학부 </option>
+                                <option value="임상병리학과"> 임상병리학과 </option>
+                                <option value="방사선학과"> 방사선학과 </option>
+                                <option value="안경광학과"> 안경광학과 </option>
+                                <option value="응급구조학과"> 응급구조학과 </option>
+                                <option value="의료경영학과"> 의료경영학과 </option>
+                                <option value="물리치료학과"> 물리치료학과 </option>
+                                <option value="치위생학과"> 치위생학과 </option>
+                                <option value="간호학과"> 간호학과 </option>
+                                <option value="의예과"> 의예과 </option>
+                            </select>
+                        </div>
+                        <div class="waring"> 학과를 선택해주세요. </div>
+                    </section>
+
+                    <section class="form_ct">
+                        <div class="name_ct">
+                            <div class="mbti"> MBTI </div>
+                            <select id="dp_mbti" name="mbti" placeholder="MBTI를 선택하세요.">
+                                <option value="" selected hidden> MBTI를 선택하세요</option>
+                                <option value="INTJ"> INTJ </option>
+                                <option value="INTP"> INTP </option>
+                                <option value="INFJ"> INFJ </option>
+                                <option value="INFP"> INFP </option>
+                                <option value="ISTJ"> ISTJ </option>
+                                <option value="ISFJ"> ISFJ </option>
+                                <option value="ISTP"> ISTP </option>
+                                <option value="ISFP"> ISFP </option>
+                                <option value="ENTJ"> ENTJ </option>
+                                <option value="ENTP"> ENTP </option>
+                                <option value="ENFJ"> ENFJ </option>
+                                <option value="ENFP"> ENFP </option>
+                                <option value="ESTJ"> ESTJ </option>
+                                <option value="ESFJ"> ESFJ </option>
+                                <option value="ESTP"> ESTP </option>
+                                <option value="ESFP"> ESFP </option>
+                            </select>
+                        </div>
+                        <div class="waring"> MBTI를 선택해주세요. </div>
+                    </section>
+
+                    <section class="form_ct">
+                        <div class="name_ct">
+                            <div class="one_liner"> 한 줄 소개 </div>
+
+                            <input type="text" id="ip_line" class="ip_liner" name="one_liner" maxlength="20"
+                                placeholder="본인을 한마디로 소개한다면?">
+
+                            <div class="waring"> 한 줄 소개를 작성해주세요. </div>
+                        </div>
+                    </section>
+
+                    <section class="form_ct">
+                        <div class="name_ct">
+                            <div class="it_gender"> 소개 받고 싶은 성별 </div>
+                            <div class="ip_ct">
+                                <div class="it_men_ct">
+                                    <input type="radio" class="ip_it_gender" name="selectGender" id="aa">
+                                    <div class="it_men">남성</div>
+                                </div>
+
+                                <div class="it_women_ct">
+                                    <input type="radio" class="ip_it_gender" name="selectGender" id="bb">
+                                    <div class="it_women"> 여성 </div>
+                                </div>
+                            </div>
+                            <div class="waring"> 소개 받고 싶은 성별을 선택해주세요.</div>
+                        </div>
+                    </section>
+                </div>
+        </section>
+
+        <div class="pattern-line" id="pt-line" style="display: none;"></div>
+
+        <section class="bottom" id="bottomSection" style="display: none;">
+            <div class="agree_all_ct">
+                <div class="agree_ct">
+                    <div class="agree"> 개인정보 수집에 동의합니다 </div>
+                    <div class="add"> [전문보기] </div>
+                </div>
+                <input type="checkbox" class="ip_agree" name="agree">
+            </div>
+
+            <div class="semi_if">
+                <ui>
+                    <li> 을지대학교 멋쟁이사자처럼 동아리에서 진행하는 드림데이즈 서비스입니다.
+                </ui> <br>
+                <li> 작성해주신 정보를 토대로 친구 매칭이 이루어지게 됩니다. </ui> <br>
+                <li> 수신 여부에 동의하셔야 서비스를 이용하실 수 있습니다. </ui> <br>
+                    </ui>
+            </div>
+        </section>
+        <button class="sus" id="suss" style="display: none;"> 등록 완료하기 </button>
+        </form>
+
+        <div id="modal" class="modal">
+            <div class="modal-ct">
+                <span class="close">&times;</span>
+                <div class="cont">개인정보 제공 및 수집 동의서 </div> <br>
+                <div> 을지대학교 멋쟁이사자처럼 드림데이즈 HELLO FRIENDS 서비스 이용을 위한 개인정보 수집 및 이용 동의서입니다.
+                    아래 내용을 확인한 후 동의 여부를 선택해 주세요.</div>
+                <div class="pf_ct">
+
+                    <div class="first"> 1. 개인정보 수집&middot;이용 목적 </div>
+                    <div class="first_content"> HELLO FRIENDS 서비스는 드림데이즈 행사 기간 동안 친구 찾기 서비스
+                        제공 및 본인 확인을 위해 개인정보를 수집 및 이용합니다. </div>
+
+                    <div class="second"> 2. 개인정보 수집항목 </div>
+                    <div class="second_content"> 필수 수집 항목: 이름, 나이, 성별, 학과, MBTI, 인스타그램 ID
+                        자동 수집 항목: 서비스 이용 기록(참여 이력, 추천된 친구 정보)
+                        ※ 수집된 정보는 서비스 운영 목적 외 다른 용도로 사용되지 않습니다. </div>
+
+                    <div class="third"> 3. 개인정보의 보유 및 이용기간 </div>
+                    <div class="third_content"> 수집된 개인정보는 HELLO FRIENDS 서비스 제공 기간 동안 보관 및 이용되며, 드림데이즈 종료 후 2025년 03월
+                        01일에 모든 데이터를 파기합니다.
+                        서비스 이용 중 개인정보 삭제 요청 시 즉시 파기됩니다.
+                    </div>
+
+                    <div class="quad"> 4. 동의 거부 및 동의 거부시 불이익 내용 </div>
+                    <div class="quad_f_content"> HELLO FRIENDS 서비스는 사용자의 개인정보를 제3자에게 제공하지 않습니다.
+                    </div>
+
+                    <div class="quad">5. 동의 거부 및 불이익 안내 </div>
+                    <div class="quad_f_content"> 사용자는 개인정보 제공에 동의하지 않을 권리가 있으며,
+                        동의하지 않을 경우 HELLO FRIENDS 서비스 이용이 제한될 수 있습니다.
+                    </div>
+
+                    <div class="quad"> 6. 개인정보 보호 및 문의처 </div>
+                    <div class="quad_f_content">
+                        개인정보 보호와 관련된 문의는 을지대학교 멋쟁이사자처럼 운영진에게 문의해 주세요.
+                        문의: 인스타그램 @likelion_eulji
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="information.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="api.js"></script>
+
+
+</body>
+
+</html>

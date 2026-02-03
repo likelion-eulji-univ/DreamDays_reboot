@@ -1,0 +1,487 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+.body {
+    margin: 0px;
+}
+
+.orange {
+    background-color: #FF7710;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+    justify-content: center;
+}
+
+.black {
+    background-color: #1C1B1A;
+    width: 50%;
+    height: 100%;
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.black>div {
+    justify-items: right;
+}
+
+.blackDisplay {
+    margin-right: 98px;
+}
+
+.orangeDisplay {
+    margin-left: 98px;
+}
+
+.main {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.likelion {
+    position: absolute;
+    width: 17vw;
+    height: 17vw;
+    max-width: 370px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.checkInfo {
+    width: 371px;
+    height: 79px;
+    flex-shrink: 0;
+    background-color: #FFF;
+    border: 0;
+    border-radius: 4em;
+}
+
+.big {
+    justify-content: right;
+}
+
+.registerInfo {
+    width: 259px;
+    height: 79px;
+    flex-shrink: 0;
+    background-color: #fff;
+    border: 0;
+    border-radius: 4em;
+}
+
+.hello {
+    margin-bottom: 12vh;
+}
+
+.preRe {
+    margin-bottom: 25.98px;
+}
+
+.right {
+    text-align: right;
+}
+
+.explainButton {
+    margin-bottom: 18.87px;
+}
+
+.titleV,
+.titleX {
+    display: flex;
+    flex-direction: row;
+}
+
+.titleX {
+    justify-content: right;
+}
+
+.mark {
+    margin: 0px 25.51px;
+}
+
+.button {
+    margin-top: 14vh;
+}
+
+.none {
+    display: none;
+}
+
+.maxWidth {
+    width: 100%;
+}
+
+.minWidth {
+    width: 0px;
+}
+
+
+
+@media all and (max-width:1024px) {
+    .likelion {
+        display: none;
+
+    }
+
+    .main {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .orange {
+        width: 100%;
+        height: 50%;
+        transition: 1s;
+    }
+
+    .black {
+        width: 100%;
+        height: 50%;
+        transition: 1s;
+    }
+
+    .black>div {
+        justify-items: left;
+    }
+
+    .black>img {
+        justify-items: left;
+    }
+
+    .hello {
+        display: none;
+    }
+
+    .button {
+        margin-top: 0;
+    }
+
+    .big {
+        width: 183px;
+        height: 100px;
+    }
+
+    .mark {
+        height: 42px;
+        margin-top: 0;
+    }
+
+    .registerInfo>img {
+        width: 90px;
+        height: 15px;
+    }
+
+    .checkInfo>img {
+        height: 15px;
+    }
+
+    .registerInfo {
+        width: 135px;
+        height: 42px;
+    }
+
+    .checkInfo {
+        width: 175px;
+        height: 42px;
+    }
+
+    .explainButton {
+        margin-top: 20.94px;
+        margin-bottom: 12.15px;
+    }
+
+    .explainButton>img {
+        height: 13px;
+    }
+
+    .preRe {
+        height: 13px;
+        margin-bottom: 15.61px;
+    }
+
+    .preRe>img {
+        height: 20px;
+    }
+
+    .orangeDisplay {
+        margin-left: 34px;
+    }
+
+    .blackDisplay {
+        margin-right: 0px;
+        margin-left: 34px;
+    }
+
+    .maxWidth {
+        height: 100%;
+    }
+
+    .minWidth {
+        height: 0px;
+        padding: 0px 5%;
+    }
+
+    .titleX {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    .right {
+        text-align: left;
+    }
+
+}
+
+
+@media all and (min-width:480px) and (max-width:1024px) {
+    .likelion {
+        display: none;
+
+    }
+
+    .preRe {
+        height: 22px;
+    }
+
+    .big {
+        height: 170px;
+        width: 270px;
+
+    }
+
+    .mark {
+        height: 60px;
+
+        margin: 0px 15px;
+        margin-top: 10px;
+    }
+
+    .explainButton>img {
+        height: 20px;
+    }
+
+    .registerInfo>img {
+        width: 97px;
+        height: 22px;
+    }
+
+    .checkInfo>img {
+        height: 22px;
+    }
+
+    .registerInfo {
+        width: 160px;
+        height: 50px;
+    }
+
+    .checkInfo {
+        width: 250px;
+        height: 50px;
+    }
+
+    .main {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .right {
+        text-align: left;
+    }
+
+
+
+}
+
+
+@media all and (min-width:1025px) and (max-width:1650px) {
+    .likelion {
+        width: 17vw;
+        height: 17vw;
+    }
+
+    .hello {
+        height: 12px;
+    }
+
+    .preRe {
+        height: 12px;
+    }
+
+    .mark {
+        height: 55px;
+    }
+
+    .big {
+        height: 130px;
+    }
+
+    .explainButton {
+        height: 10px;
+    }
+
+    .registerInfo>img,
+    .checkInfo>img {
+        height: 27px;
+    }
+
+    .blackDisplay {
+        margin-right: 75px;
+    }
+
+    .orangeDisplay {
+        margin-left: 75px;
+    }
+}

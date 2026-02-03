@@ -1,0 +1,353 @@
+@font-face {
+    font-family: 'ONE-Mobile-Title';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+
+.main {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #FF7710;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.helloFriends {
+    width: 312px;
+    height: 24px;
+
+    margin-bottom: 26px;
+}
+
+.info {
+    border-radius: 12px;
+    background: #FFF;
+    width: 60%;
+    max-width: 885px;
+    height: 200px;
+    margin-bottom: 109px;
+    margin-top: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.viewYourRegister {
+    max-height: 61.05px;
+    min-width: 388px;
+    width: 35%;
+}
+
+
+
+button {
+    width: 60%;
+    max-width: 885px;
+    height: 104px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 18px;
+    background: #FFF;
+    color: #FF7710;
+
+    font-family: 'ONE-Mobile-Title';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.tags,
+.responses {
+    /* display: flex; */
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.tag {
+    color: #FF7710;
+    font-family: 'ONE-Mobile-Title';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 24px 0;
+}
+
+.response {
+    color: #FF7710;
+    font-family: 'ONE-Mobile-Title';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 17px 0;
+}
+
+@media all and (max-height:900px) {
+    .orange {
+        padding-top: 150px;
+        padding-bottom: 50px;
+    }
+
+    .helloFriends {
+        margin-top: 100px;
+    }
+
+    button {
+        margin-bottom: 100px;
+    }
+}
+
+
+@media all and (max-width:479px) {
+
+    .orange {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .main {
+        justify-content: flex-start;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .helloFriends {
+        margin-top: 120px;
+        height: 10px;
+    }
+
+    .viewYourRegister {
+        height: 19px;
+        min-height: none;
+        min-width: none;
+    }
+
+    .response {
+        font-size: 15px;
+    }
+
+    .tag {
+        font-size: 11px;
+        margin: 17px 0;
+    }
+
+    button {
+        width: 60%;
+        height: 40px;
+        border-radius: 18px;
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+
+    .info {
+        height: 120px;
+    }
+}
+
+@media all and (min-width:480px) and (max-width:1024px) {
+    .orange {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .main {
+        justify-content: flex-start;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .viewYourRegister {
+        max-height: 27px;
+        min-height: none;
+        min-width: none;
+    }
+
+    .helloFriends {
+        margin-top: 18vh;
+        height: 15px;
+    }
+
+    button {
+        width: 60%;
+        min-width: 400px;
+        height: 60px;
+        border-radius: 18px;
+        font-size: 25px;
+        margin-bottom: 0px;
+    }
+
+    .response {
+        font-size: 25px;
+        margin: 13px 0;
+    }
+
+    .tag {
+        font-size: 18px;
+        margin: 15px 0;
+    }
+
+
+    .info {
+        min-width: 400px;
+    }
+}
+
+@media all and (max-width:340px) {
+    .viewYourRegister {
+        height: 17px;
+    }
+}
