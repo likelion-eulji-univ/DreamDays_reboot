@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       try {
         const response = await axios.post(
-          "http://hellofriend-eulji.site:8080/api/users/create-info",
+          "https://hellofriend-eulji.site/api/users/create-info",
           data,
           {
             headers: { "Content-Type": "application/json" },

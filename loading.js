@@ -7,7 +7,7 @@ const studentNumber = urlParams.get("studentNumber");
 const name = urlParams.get("name");
 
 setTimeout(() => {
-  fetch("http://hellofriend-eulji.site:8080/api/draw", {
+  fetch("https://hellofriend-eulji.site/api/draw", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -43,16 +43,13 @@ async function drawUser() {
   };
 
   try {
-    const response = await fetch(
-      "http://hellofriend-eulji.site:8080/api/draw",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestData),
+    const response = await fetch("https://hellofriend-eulji.site/api/draw", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-    );
+      body: JSON.stringify(requestData),
+    });
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -81,16 +78,13 @@ async function drawUser() {
   };
 
   try {
-    const response = await fetch(
-      "http://hellofriend-eulji.site:8080/api/draw",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestData),
+    const response = await fetch("https://hellofriend-eulji.site/api/draw", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-    );
+      body: JSON.stringify(requestData),
+    });
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
