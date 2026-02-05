@@ -634,14 +634,15 @@ input:-webkit-autofill::first-line {
     justify-self: center;
     width: 80%;
     margin-top: 5%;
+    margin: 0 auto;
   }
 
   .sus {
     font-family: "ONE-Mobile-Title";
     src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff")
       format("woff");
-    width: 50%;
-    height: 10vh;
+    width: 70%;
+    height: 8vh;
     flex-shrink: 0;
     border-radius: 18px;
     background: #fff;
@@ -1001,6 +1002,24 @@ input:-webkit-autofill::first-line {
     line-height: normal;
   }
 
+  .sus {
+    font-family: "ONE-Mobile-Title";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff")
+      format("woff");
+    width: 70%;
+    height: 8vh;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background: #fff;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #000;
+    margin-top: 10%;
+    margin-bottom: 20%;
+  }
+
   .agree_all_ct {
     display: flex;
     flex-direction: row;
@@ -1292,6 +1311,7 @@ input:-webkit-autofill::first-line {
     justify-self: center;
     width: 80%;
     margin-top: 5%;
+    margin: 0 auto;
   }
 
   .sus {
