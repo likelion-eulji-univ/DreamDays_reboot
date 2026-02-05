@@ -1,17 +1,18 @@
 @font-face {
-    font-family: 'ONE-Mobile-Title';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "ONE-Mobile-Title";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
-
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -99,12 +100,12 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -119,327 +120,310 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: "";
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-
 input:-webkit-autofill {
-    background-color: #FF7710 !important;  /* 자동 입력 시 배경색 (오렌지) */
-    -webkit-text-fill-color: white !important;  /* 자동 입력 시 글자색 (흰색) */
-    -webkit-box-shadow: 0 0 0px 1000px #FF7710 inset !important; /* 배경색 강제 덮어쓰기 */
-    transition: background-color 5000s ease-in-out 0s; /* 크롬에서 스타일 유지 */
+  background-color: #ff7710 !important; /* 자동 입력 시 배경색 (오렌지) */
+  -webkit-text-fill-color: white !important; /* 자동 입력 시 글자색 (흰색) */
+  -webkit-box-shadow: 0 0 0px 1000px #ff7710 inset !important; /* 배경색 강제 덮어쓰기 */
+  transition: background-color 5000s ease-in-out 0s; /* 크롬에서 스타일 유지 */
 }
 
 input:-webkit-autofill::first-line {
-    color: white !important;  /* 자동완성된 첫 줄 글자색 */
+  color: white !important; /* 자동완성된 첫 줄 글자색 */
 }
 
-  
-
-
-
-.orange>div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: 1s;
+.orange > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 1s;
 }
 
 .main {
-    box-sizing: border-box;
-    width: 100vw;
-    overflow-y: auto;
-    height: 100vh;
-    background-color: #FF7710;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-y: auto;
+  height: 100vh;
+  background-color: #ff7710;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-
-
 .checkYourRegister {
-    max-width: 1084px;
-    min-width: 740px;
-    max-height: 70px;
-    width: 70%;
-    margin-bottom: 40px;
+  max-width: 1084px;
+  min-width: 740px;
+  max-height: 70px;
+  width: 70%;
+  margin-bottom: 40px;
 }
 
 .helloFriends {
+  width: 312px;
+  height: 24px;
 
-    width: 312px;
-    height: 24px;
-
-    margin-bottom: 26px;
+  margin-bottom: 26px;
 }
 
 .labelStyle {
-    color: #FFF;
-    font-size: 32px;
-    margin-bottom: 21px;
-    font-family: 'Pretendard-Regular';
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 38.19px;
-    letter-spacing: 0%;
-
-
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 21px;
+  font-family: "Pretendard-Regular";
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38.19px;
+  letter-spacing: 0%;
 }
 
 .warningName,
 .warningNumber {
-    color: #FF7710;
-    font-size: 25px;
-    margin: 3px;
+  color: #ff7710;
+  font-size: 25px;
+  margin: 3px;
 }
 
 .warning {
-    color: #1C1B1A;
+  color: #1c1b1a;
 }
 
 .inputStyle {
-    text-align: center;
-    width: 100%;
-    height: 63px;
-    flex-shrink: 0;
-    border-radius: 12px;
-    border: 2px solid #FFF;
-    background-color: #FF7710;
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 38.19px;
-    letter-spacing: 0%;
-
-
-
+  text-align: center;
+  width: 100%;
+  height: 63px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  background-color: #ff7710;
+  color: #fff;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38.19px;
+  letter-spacing: 0%;
 }
 
 .inputStyle::placeholder {
-    color: #FFF;
-    text-align: center;
+  color: #fff;
+  text-align: center;
 }
 
 form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 96px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 96px;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-    width: 50%;
-    max-width: 753px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  width: 50%;
+  max-width: 753px;
 }
 
 .column:nth-of-type(2) {
-    margin-bottom: 105px;
+  margin-bottom: 105px;
 }
 
 button {
+  width: 60%;
+  max-width: 885px;
+  height: 104px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 18px;
+  background: #fff;
+  color: #ff7710;
+
+  font-family: "ONE-Mobile-Title";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff")
+    format("woff");
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media all and (max-height: 900px) {
+  .orange {
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+
+  .helloFriends {
+    margin-top: 100px;
+  }
+
+  .button {
+    margin-bottom: 100px;
+  }
+
+  .none {
+    display: none;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .orange {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .column {
+    margin-bottom: 15px;
+  }
+
+  .main {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: flex-start;
+  }
+
+  .helloFriends {
+    margin-top: 120px;
+    height: 10px;
+  }
+
+  .checkYourRegister {
+    height: 19px;
+  }
+
+  button {
     width: 60%;
     max-width: 885px;
-    height: 104px;
-    flex-shrink: 0;
-    border: 0;
+    height: 40px;
     border-radius: 18px;
-    background: #FFF;
-    color: #FF7710;
+    font-size: 15px;
+    margin-bottom: 0;
+  }
 
-    font-family: 'ONE-Mobile-Title';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  form {
+    margin-top: 60px;
+  }
 
+  .warningName,
+  .warningNumber {
+    font-size: 15px;
+  }
+
+  .labelStyle {
+    font-size: 15px;
+    margin-bottom: 13px;
+  }
+
+  .inputStyle {
+    height: 40px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+
+  .column:nth-of-type(2) {
+    margin-bottom: 90px;
+  }
+
+  .none {
+    display: none;
+  }
 }
 
+@media all and (min-width: 480px) and (max-width: 1024px) {
+  .orange {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 
-@media all and (max-height:900px) {
-    .orange {
-        padding-top: 150px;
-        padding-bottom: 50px;
-    }
+  .main {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: flex-start;
+  }
 
-    .helloFriends {
-        margin-top: 100px;
-    }
+  .helloFriends {
+    margin-top: 120px;
+    height: 15px;
+  }
 
-    .button {
-        margin-bottom: 100px;
-    }
+  .checkYourRegister {
+    max-height: 27px;
+  }
 
-    .none {
-        display: none;
-    }
-}
+  button {
+    width: 60%;
+    min-width: 388px;
+    height: 60px;
+    border-radius: 18px;
+    font-size: 25px;
+    margin-bottom: 0;
+  }
 
-@media all and (max-width:479px) {
-    .orange {
-        padding-top: 0px;
-        padding-bottom: 0px;
-    }
+  .labelStyle {
+    font-size: 25px;
+  }
 
+  .warningName,
+  .warningNumber {
+    font-size: 20px;
+  }
 
-    .column {
-        margin-bottom: 15px;
-    }
+  .inputStyle {
+    height: 60px;
+    border-radius: 12px;
+    font-size: 25px;
+  }
 
-    .main {
-        margin: 0;
-        width: 100%;
-        height: 100vh;
-        justify-content: flex-start;
-    }
+  .column {
+    width: 50%;
+    min-width: 330px;
+  }
 
-    .helloFriends {
-        margin-top: 120px;
-        height: 10px;
-    }
-
-    .checkYourRegister {
-        height: 19px;
-    }
-
-    button {
-        width: 60%;
-        max-width: 885px;
-        height: 40px;
-        border-radius: 18px;
-        font-size: 15px;
-        margin-bottom: 0;
-    }
-
-    form {
-        margin-top: 80px;
-    }
-
-    .warningName,
-    .warningNumber {
-        font-size: 15px;
-    }
-
-    .labelStyle {
-        font-size: 15px;
-        margin-bottom: 13px;
-
-    }
-
-    .inputStyle {
-        height: 40px;
-        border-radius: 12px;
-        font-size: 15px;
-    }
-
-    .column:nth-of-type(2) {
-        margin-bottom: 90px;
-    }
-
-    .none {
-        display: none;
-    }
-}
-
-@media all and (min-width:480px) and (max-width:1024px) {
-    .orange {
-        padding-top: 0px;
-        padding-bottom: 0px;
-    }
-
-    .main {
-        margin: 0;
-        width: 100%;
-        height: 100vh;
-        justify-content: flex-start;
-    }
-
-    .helloFriends {
-        margin-top: 120px;
-        height: 15px;
-    }
-
-    .checkYourRegister {
-        max-height: 27px;
-    }
-
-    button {
-        width: 60%;
-        min-width: 388px;
-        height: 60px;
-        border-radius: 18px;
-        font-size: 25px;
-        margin-bottom: 0;
-    }
-
-    .labelStyle {
-        font-size: 25px;
-
-    }
-
-    .warningName,
-    .warningNumber {
-        font-size: 20px;
-    }
-
-    .inputStyle {
-        height: 60px;
-        border-radius: 12px;
-        font-size: 25px;
-    }
-
-    .column {
-        width: 50%;
-        min-width: 330px;
-    }
-
-    .none {
-        display: none;
-    }
+  .none {
+    display: none;
+  }
 }
 
 .none {
-    display: none !important;
+  display: none !important;
 }
 
-
-@media all and (max-width:340px) {
-    .checkYourRegister {
-        height: 17px;
-    }
+@media all and (max-width: 340px) {
+  .checkYourRegister {
+    height: 17px;
+  }
 }

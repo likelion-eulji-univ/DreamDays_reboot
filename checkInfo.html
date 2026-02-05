@@ -1,75 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
     <title>likelion_eulji</title>
-    <link rel="stylesheet" href="checkInfo.css">
-    <link rel="stylesheet" href="viewInfo.css">
-</head>
+    <link rel="stylesheet" href="checkInfo.css" />
+    <link rel="stylesheet" href="viewInfo.css" />
+  </head>
 
-<body>
+  <body>
     <div class="main">
-        <div class="orange">
-            <div class="checkPage">
-                <img class="helloFriends" src="img\helloFriends.svg" alt="helloFriends" />
-                <img class="checkYourRegister" src="img\checkYourRegister.svg" alt="checkYourRegister" />
+      <div class="orange">
+        <div class="checkPage">
+          <img
+            class="helloFriends"
+            src="img\helloFriends.svg"
+            alt="helloFriends"
+          />
+          <img
+            class="checkYourRegister"
+            src="img\checkYourRegister.svg"
+            alt="checkYourRegister"
+          />
 
-                <form onsubmit="return inputValue();" id="form">
-
-                    <div class="column">
-                        <label class="labelStyle" for="name">이름</label>
-                        <input type="text" class="inputStyle" id="name" name="name" placeholder="이름을 입력하세요">
-                        <div class="warningName">이름을 작성해주세요.</div>
-                    </div>
-
-                    <div class="column">
-                        <label class="labelStyle" for="studentNumber">학번</label>
-                        <input type="number" class="inputStyle" id="studentNumber" name="studentNumber"
-                            placeholder="학번을 입력하세요">
-                        <div class="warningNumber">학번을 작성해주세요.</div>
-                    </div>
-
-                    <button class="testt" type="submit">등록 확인하기</button>
-                </form>
+          <form onsubmit="return inputValue();" id="form">
+            <div class="column">
+              <label class="labelStyle" for="name">이름</label>
+              <input
+                type="text"
+                class="inputStyle"
+                id="name"
+                name="name"
+                placeholder="이름을 입력하세요"
+              />
+              <div class="warningName">이름을 작성해주세요.</div>
             </div>
 
-            <div class="drawPage none">
-                <img class="helloFriends" src="img\helloFriends.svg" alt="helloFriends" />
-                <img class="viewYourRegister" src="img\viewYourRegister.svg" alt="viewYourRegister" />
-                <div class="info">
-                    <div class="tags">
-                        <div class="tag">이름 :</div>
-                        <div class="tag">학번 :</div>
-                    </div>
-                    <div class="responses">
-                        <div class="response" id="re_name"></div>
-                        <div class="response" id="re_studentNumber"></div>
-                        <div class="response" id="re_isDraw"></div>
-                    </div>
-
-                </div>
-                <button id="friendsButton">
-                    친구 뽑기
-                </button>
+            <div class="column">
+              <label class="labelStyle" for="studentNumber">학번</label>
+              <input
+                type="number"
+                class="inputStyle"
+                id="studentNumber"
+                name="studentNumber"
+                placeholder="학번을 입력하세요"
+              />
+              <div class="warningNumber">학번을 작성해주세요.</div>
             </div>
 
-
-
-
-
+            <button class="testt" type="submit">등록 확인하기</button>
+          </form>
         </div>
+
+        <div class="drawPage none">
+          <img
+            class="helloFriends"
+            src="img\helloFriends.svg"
+            alt="helloFriends"
+          />
+          <img
+            class="viewYourRegister"
+            src="img\viewYourRegister.svg"
+            alt="viewYourRegister"
+          />
+          <div class="info">
+            <div class="tags">
+              <div class="tag">이름 :</div>
+              <div class="tag">학번 :</div>
+            </div>
+            <div class="responses">
+              <div class="response" id="re_name"></div>
+              <div class="response" id="re_studentNumber"></div>
+              <div class="response" id="re_isDraw"></div>
+            </div>
+          </div>
+          <button id="friendsButton">친구 뽑기</button>
+        </div>
+      </div>
     </div>
     <script src="checkInfo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="sieun_api.js"></script>
 
-
-    <script>
-
-    </script>
-</body>
-
+    <script></script>
+  </body>
 </html>

@@ -1,60 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link rel="stylesheet" href="result_page.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <link rel="stylesheet" href="result_page.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main class="main">
-        <section class="top">
-            <div class="hf">
-                <img src="img/hf.svg">
-            </div>
-            <div class="if_reg">
-                <img src="img/random_friends.svg">
-            </div>
-        </section>
+      <section class="top">
+        <div class="hf">
+          <img src="img/hf.svg" />
+        </div>
+        <div class="if_reg">
+          <img src="img/random_friends.svg" />
+        </div>
+      </section>
 
-        <section class="middle">
-            <div class="result_ct">
-                <section class="left_title">
-                    <div class="f_name"> 이름: </div>
-                    <div class="f_age"> 나이: </div>
-                    <div class="f_reg"> 학과: </div>
-                    <div class="f_gender"> 성별: </div>
-                    <div class="f_insta"> 인스타 ID: </div>
-                    <div class="f_mbti"> MBTI: </div>
-                    <div class="f_one"> 한 줄 소개: </div>
+      <section class="middle">
+        <div class="result_ct">
+          <section class="left_title">
+            <div class="f_name">이름:</div>
+            <div class="f_age">나이:</div>
+            <div class="f_reg">학과:</div>
+            <div class="f_gender">성별:</div>
+            <div class="f_insta">인스타 ID:</div>
+            <div class="f_mbti">MBTI:</div>
+            <div class="f_one">한 줄 소개:</div>
+          </section>
 
-                </section>
+          <section class="right_title">
+            <!-- 동적으로 데이터가 들어갈 부분 -->
+            <div class="f_rp_name" id="name"></div>
+            <div class="f_rp_age" id="age"></div>
+            <div class="f_rp_reg" id="department"></div>
+            <div class="f_rp_gender" id="gender"></div>
+            <a id="mbtiq"><div class="f_rp_insta" id="instagramId"></div></a>
+            <div class="f_rp_mbti" id="mbti"></div>
+            <div class="f_rp_one" id="bio"></div>
+          </section>
+        </div>
+      </section>
 
-                <section class="right_title">
-                    <!-- 동적으로 데이터가 들어갈 부분 -->
-                    <div class="f_rp_name" id="name"></div>
-                    <div class="f_rp_age" id="age"></div>
-                    <div class="f_rp_reg" id="department"></div>
-                    <div class="f_rp_gender" id="gender"></div>
-                    <a id="mbtiq"><div class="f_rp_insta" id="instagramId"></div></a>
-                    <div class="f_rp_mbti" id="mbti"> </div>
-                    <div class="f_rp_one" id="bio"></div>
-
-                </section>
-            </div> 
-        </section>
-
-        <section class="bottom">
-            <button class="mat_sus"> 친구 매칭 완료! </button>
-        </section>
+      <section class="bottom">
+        <button class="mat_sus">친구 매칭 완료!</button>
+      </section>
     </main>
 
     <script src="result_page.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</body>
-
+  </body>
 </html>

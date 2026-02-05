@@ -1,27 +1,28 @@
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'ONE-Mobile-Title';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+  font-family: "ONE-Mobile-Title";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 input:-webkit-autofill {
-  background-color: #1C1B1A !important;  /* 자동 입력 시 배경색 (어두운 회색) */
-  -webkit-text-fill-color: white !important;  /* 자동 입력 시 글자색 (흰색) */
-  -webkit-box-shadow: 0 0 0px 1000px #1C1B1A inset !important; /* 배경색 강제 덮어쓰기 */
+  background-color: #1c1b1a !important; /* 자동 입력 시 배경색 (어두운 회색) */
+  -webkit-text-fill-color: white !important; /* 자동 입력 시 글자색 (흰색) */
+  -webkit-box-shadow: 0 0 0px 1000px #1c1b1a inset !important; /* 배경색 강제 덮어쓰기 */
   transition: background-color 5000s ease-in-out 0s; /* 크롬에서 스타일 유지 */
 }
 
 input:-webkit-autofill::first-line {
-  color: white !important;  /* 자동완성된 첫 줄 글자색 */
+  color: white !important; /* 자동완성된 첫 줄 글자색 */
 }
-
 
 .waring {
   display: none;
@@ -34,12 +35,11 @@ input:-webkit-autofill::first-line {
   /* 세로 스크롤 가능하도록 설정 */
   /* overflow-x: hidden;  */
   position: relative;
-  background-color: #1C1B1A;
+  background-color: #1c1b1a;
   /* margin: 5% 5%; */
   width: 90%;
   height: 90vh;
   justify-content: flex-start;
-
 }
 
 .hf {
@@ -50,7 +50,7 @@ input:-webkit-autofill::first-line {
   /* max-width: 312px; */
 }
 
-.if_reg>img {
+.if_reg > img {
   height: 61.05px;
 }
 
@@ -58,8 +58,7 @@ input:-webkit-autofill::first-line {
   height: 61.05px;
 }
 
-
-.hf>img {
+.hf > img {
   height: 20px;
   margin-bottom: 26px;
   width: 50%;
@@ -77,16 +76,14 @@ input:-webkit-autofill::first-line {
 }
 
 .if_bt {
-
   margin: 0 auto;
   margin-top: 15%;
 
   width: 885px;
   height: 104px;
   border-radius: 18px;
-  background: #FFF;
+  background: #fff;
 }
-
 
 .ip_form {
   display: flex;
@@ -104,22 +101,23 @@ input:-webkit-autofill::first-line {
   width: 80%;
 }
 
-
 #ip_name,
 #ip_age {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-size: 28px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  color: #FFF;
+  color: #fff;
 }
 
 #dp_major {
-  color: #BBBBBB;
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  color: #bbbbbb;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-size: 28px;
   font-style: normal;
   font-weight: 500;
@@ -128,20 +126,21 @@ input:-webkit-autofill::first-line {
 
 .ip_id,
 .ip_liner {
-  color: #BBBBBB;
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  color: #bbbbbb;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-size: 28px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-
 }
 
 .ip_liner {
-  color: #BBBBBB;
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  color: #bbbbbb;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-size: 28px;
   font-style: normal;
   font-weight: 500;
@@ -156,22 +155,19 @@ input:-webkit-autofill::first-line {
 .insta_id,
 .one_liner,
 .it_gender {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-weight: 600;
   font-style: normal;
   font-size: 32px;
   line-height: normal;
-
 }
-
-
 
 .name_ct {
   display: flex;
   flex-direction: column;
   gap: 30px;
-
 }
 
 .name_ct input {
@@ -179,28 +175,24 @@ input:-webkit-autofill::first-line {
   margin: 0px;
   padding: 0px;
   height: 63px;
-  background-color: #1C1B1A;
+  background-color: #1c1b1a;
   border-radius: 12px;
-  border: 1px solid #FFF;
-  border-color: #FFFFFF;
+  border: 1px solid #fff;
+  border-color: #ffffff;
   text-align: center;
-  color: #FFFFFF;
-
+  color: #ffffff;
 }
 
 .name_ct select {
   width: 753px;
   height: 63px;
-  background-color: #1C1B1A;
+  background-color: #1c1b1a;
   border-radius: 12px;
-  border: 1px solid #FFF;
-  border-color: #FFFFFF;
-  color: #FFFFFF;
+  border: 1px solid #fff;
+  border-color: #ffffff;
+  color: #ffffff;
   text-align: center;
-
 }
-
-
 
 .form_ct {
   justify-self: center;
@@ -224,9 +216,10 @@ input:-webkit-autofill::first-line {
 }
 
 .gender_man {
-  color: #FFF;
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  color: #fff;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
@@ -234,9 +227,10 @@ input:-webkit-autofill::first-line {
 }
 
 .gender_woman {
-  color: #FFF;
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  color: #fff;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
@@ -250,8 +244,8 @@ input:-webkit-autofill::first-line {
   height: 36px;
   flex-shrink: 0;
   border-radius: 5px;
-  border: 1px solid #FFF;
-  background-color: #1C1B1A;
+  border: 1px solid #fff;
+  background-color: #1c1b1a;
   /* 체크박스 배경색 */
 }
 
@@ -268,8 +262,8 @@ input:-webkit-autofill::first-line {
   height: 36px;
   flex-shrink: 0;
   border-radius: 5px;
-  border: 1px solid #FFF;
-  background-color: #1C1B1A;
+  border: 1px solid #fff;
+  background-color: #1c1b1a;
   /* 체크박스 배경색 */
 }
 
@@ -280,11 +274,10 @@ input:-webkit-autofill::first-line {
   height: 36px;
   flex-shrink: 0;
   border-radius: 5px;
-  border: 1px solid #FFF;
-  background-color: #1C1B1A;
+  border: 1px solid #fff;
+  background-color: #1c1b1a;
   /* 체크박스 배경색 */
 }
-
 
 .it_men_ct,
 .it_women_ct,
@@ -298,28 +291,28 @@ input:-webkit-autofill::first-line {
 .it_men,
 .it_women,
 .it_none {
-
-  color: #FFF;
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  color: #fff;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
 
-
-
 .pattern-line {
   width: 90%;
   height: 1px;
   justify-self: center;
   margin-top: 6%;
-  background: repeating-linear-gradient(to right,
-      #FFFFFF 0px,
-      #FFFFFF 10px,
-      transparent 10px,
-      transparent 20px);
+  background: repeating-linear-gradient(
+    to right,
+    #ffffff 0px,
+    #ffffff 10px,
+    transparent 10px,
+    transparent 20px
+  );
 }
 
 .bottom {
@@ -349,15 +342,16 @@ input:-webkit-autofill::first-line {
   height: 34px;
   flex-shrink: 0;
   border-radius: 5px;
-  border: 1px solid #FFF;
-  background-color: #1C1B1A;
+  border: 1px solid #fff;
+  background-color: #1c1b1a;
   /* 체크박스 배경색 */
 }
 
 .agree {
-  color: #FFF;
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  color: #fff;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-size: 32px;
   font-style: normal;
   font-weight: 600;
@@ -365,9 +359,10 @@ input:-webkit-autofill::first-line {
 }
 
 .add {
-  color: #FFF;
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  color: #fff;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -382,9 +377,10 @@ input:-webkit-autofill::first-line {
 
 .semi_if {
   margin-top: 8%;
-  color: #FFF;
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  color: #fff;
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -393,13 +389,14 @@ input:-webkit-autofill::first-line {
 }
 
 .sus {
-  font-family: 'ONE-Mobile-Title';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+  font-family: "ONE-Mobile-Title";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff")
+    format("woff");
   width: 885px;
   height: 104px;
   flex-shrink: 0;
   border-radius: 18px;
-  background: #FFF;
+  background: #fff;
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
@@ -420,8 +417,8 @@ input:-webkit-autofill::first-line {
   height: 36px;
   flex-shrink: 0;
   border-radius: 5px;
-  border: 1px solid #FFF;
-  background-color: #1C1B1A;
+  border: 1px solid #fff;
+  background-color: #1c1b1a;
   /* 기본 배경색 */
   background-repeat: no-repeat;
   background-position: center;
@@ -434,8 +431,7 @@ input:-webkit-autofill::first-line {
 .ip_agree[type="checkbox"]:checked,
 .ip_agree[type="radio"]:checked,
 .ip_ct input[type="radio"]:checked {
-
-  background-image: url('img/checkbox_img.svg');
+  background-image: url("img/checkbox_img.svg");
   /* 체크된 상태의 SVG */
   border-color: transparent;
   /* 경계선을 없애기 */
@@ -484,8 +480,7 @@ input:-webkit-autofill::first-line {
   align-items: center;
 }
 
-
-@media all and (max-width:479px) {
+@media all and (max-width: 479px) {
   body {
     margin: 0px;
   }
@@ -501,13 +496,10 @@ input:-webkit-autofill::first-line {
     margin-top: 6vh;
   }
 
-
-  .hf>img {
-
-    height: 10px;
-    margin-bottom: 26px;
+  .hf > img {
+    height: 18px;
+    margin-bottom: 18px;
   }
-
 
   .hf {
     color: white;
@@ -515,31 +507,28 @@ input:-webkit-autofill::first-line {
     padding-top: 15%;
   }
 
-
-
   .if_reg {
     color: white;
     text-align: center;
     height: 19px;
   }
 
-  .if_reg>img {
-    height: 19px;
+  .if_reg > img {
+    height: 24px;
   }
 
-
   .if_bt {
-    font-family: 'ONE-Mobile-Title';
+    font-family: "ONE-Mobile-Title";
     color: #000;
-    font-size: 2em;
+    font-size: 1.3em;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 
-    width: 200%;
-    /* height: 18px; */
+    width: 70%;
+    height: 60%;
     border-radius: 18px;
-    background: #FFF;
+    background: #fff;
   }
 
   .if_bt img {
@@ -565,7 +554,6 @@ input:-webkit-autofill::first-line {
     display: flex;
     flex-direction: column;
     gap: 30px;
-
   }
 
   .name,
@@ -577,13 +565,13 @@ input:-webkit-autofill::first-line {
   .one_liner,
   .it_gender,
   .student {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 600;
     font-style: normal;
     font-size: 100%;
     line-height: normal;
-
   }
 
   .name_ct input,
@@ -592,20 +580,20 @@ input:-webkit-autofill::first-line {
     margin: 0px;
     padding: 0px;
     /* height: 5vh; */
-    background-color: #1C1B1A;
+    background-color: #1c1b1a;
     border-radius: 12px;
-    border: 1px solid #FFF;
-    border-color: #FFFFFF;
+    border: 1px solid #fff;
+    border-color: #ffffff;
     text-align: center;
-    color: #BBBBBB;
-
+    color: #bbbbbb;
   }
 
   .gender_man,
   .gender_woman {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-size: 0.7em;
     font-style: normal;
     font-weight: 500;
@@ -619,10 +607,11 @@ input:-webkit-autofill::first-line {
   #dp_mbti,
   #dp_major,
   .ip_st {
-    font-family: 'Pretendard-Regular';
-    color: #BBBBBB;
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-size: 1.0em;
+    font-family: "Pretendard-Regular";
+    color: #bbbbbb;
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+    font-size: 1em;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -632,8 +621,9 @@ input:-webkit-autofill::first-line {
   #ip_age,
   .ip_id,
   .ip_liner {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-size: 1.2em;
     font-style: normal;
     font-weight: 500;
@@ -647,13 +637,14 @@ input:-webkit-autofill::first-line {
   }
 
   .sus {
-    font-family: 'ONE-Mobile-Title';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-family: "ONE-Mobile-Title";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff")
+      format("woff");
     width: 50%;
     height: 10vh;
     flex-shrink: 0;
     border-radius: 18px;
-    background: #FFF;
+    background: #fff;
     font-size: 1.5em;
     font-style: normal;
     font-weight: 400;
@@ -673,9 +664,10 @@ input:-webkit-autofill::first-line {
   }
 
   .agree {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-size: 1em;
     font-style: normal;
     font-weight: 600;
@@ -683,9 +675,10 @@ input:-webkit-autofill::first-line {
   }
 
   .add {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-size: 0.7em;
     font-style: normal;
     font-weight: 400;
@@ -705,16 +698,17 @@ input:-webkit-autofill::first-line {
     height: 1.5em;
     flex-shrink: 0;
     border-radius: 5px;
-    border: 1px solid #FFF;
-    background-color: #1C1B1A;
+    border: 1px solid #fff;
+    background-color: #1c1b1a;
     /* 체크박스 배경색 */
   }
 
   .semi_if {
     margin-top: 8%;
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-size: 1em;
     font-style: normal;
     font-weight: 400;
@@ -727,12 +721,13 @@ input:-webkit-autofill::first-line {
   .ip_id::placeholder,
   .ip_liner::placeholder,
   .ip_st::placeholder {
-    color: #BBBBBB;
+    color: #bbbbbb;
   }
 
   .cont {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 700;
     font-style: normal;
     font-size: 2em;
@@ -752,8 +747,9 @@ input:-webkit-autofill::first-line {
   .second,
   .third,
   .quad {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 500;
     font-style: normal;
     font-size: 0.6em;
@@ -765,8 +761,9 @@ input:-webkit-autofill::first-line {
   .third_content,
   .quad_f_content,
   .quad_s_content {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 400;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -775,12 +772,11 @@ input:-webkit-autofill::first-line {
 
   #ip_name,
   #ip_age {
-    color: #FFF;
+    color: #fff;
   }
 }
 
-
-@media all and (min-width:480px) and (max-width:1024px) {
+@media all and (min-width: 480px) and (max-width: 1024px) {
   body {
     margin: 0px;
   }
@@ -801,14 +797,13 @@ input:-webkit-autofill::first-line {
     /* padding-top: 15%; */
   }
 
-  .hf>img {
-    height: 30px;
+  .hf > img {
+    height: 20px;
     margin-bottom: 26px;
   }
 
-  .if_reg>img {
-
-    height: 70px;
+  .if_reg > img {
+    height: 40px;
   }
 
   .if_reg {
@@ -824,19 +819,18 @@ input:-webkit-autofill::first-line {
   }
 
   .if_bt {
-    font-family: 'ONE-Mobile-Title';
+    font-family: "ONE-Mobile-Title";
     color: #000;
     font-size: 2em;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 
-    width: 200%;
-    /* height: 10vh; */
+    width: 70%;
+    height: 8vh;
     border-radius: 18px;
-    background: #FFF;
+    background: #fff;
   }
-
 
   .if_bt img {
     width: 50%;
@@ -857,7 +851,6 @@ input:-webkit-autofill::first-line {
     color: white;
   }
 
-
   .form_all_ct {
     gap: 70px;
   }
@@ -871,13 +864,13 @@ input:-webkit-autofill::first-line {
   .one_liner,
   .it_gender,
   .student {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 600;
     font-style: normal;
     font-size: 2em;
     line-height: normal;
-
   }
 
   .form_all_ct {
@@ -893,13 +886,13 @@ input:-webkit-autofill::first-line {
   .one_liner,
   .it_gender,
   .student {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 600;
     font-style: normal;
     font-size: 1.5em;
     line-height: normal;
-
   }
 
   .name_ct input,
@@ -908,12 +901,12 @@ input:-webkit-autofill::first-line {
     margin: 0px;
     padding: 0px;
     /* height: 6vh; */
-    background-color: #1C1B1A;
+    background-color: #1c1b1a;
     border-radius: 12px;
-    border: 1px solid #FFF;
-    border-color: #FFFFFF;
+    border: 1px solid #fff;
+    border-color: #ffffff;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .it_men,
@@ -921,30 +914,29 @@ input:-webkit-autofill::first-line {
   .it_none,
   .gender_man,
   .gender_woman {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-size: 2em;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
   }
 
-
   .gender_man,
   .gender_woman {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 1.7em;
     font-style: normal;
     font-weight: 500;
-    color: #BBBBBB;
+    color: #bbbbbb;
     line-height: normal;
-
   }
-
 
   .ip_ct input[type="radio"] {
     appearance: none;
@@ -954,8 +946,8 @@ input:-webkit-autofill::first-line {
     flex-shrink: 0;
 
     border-radius: 5px;
-    border: 1px solid #FFF;
-    background-color: #1C1B1A;
+    border: 1px solid #fff;
+    background-color: #1c1b1a;
     background-repeat: no-repeat;
     /* background: #FFF; */
     font-size: 2em;
@@ -963,7 +955,6 @@ input:-webkit-autofill::first-line {
     font-weight: 400;
     line-height: normal;
     color: #000;
-
   }
 
   .it_men_ct,
@@ -984,10 +975,11 @@ input:-webkit-autofill::first-line {
   #dp_mbti,
   #dp_major,
   .ip_st {
-    font-family: 'Pretendard-Regular';
-    color: #BBBBBB;
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-size: 1.0em;
+    font-family: "Pretendard-Regular";
+    color: #bbbbbb;
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+    font-size: 1em;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -998,15 +990,15 @@ input:-webkit-autofill::first-line {
   .it_none,
   .gender_man,
   .gender_woman {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 2em;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-
   }
 
   .agree_all_ct {
@@ -1018,9 +1010,10 @@ input:-webkit-autofill::first-line {
   }
 
   .agree {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-size: 1.5em;
     font-style: normal;
     font-weight: 600;
@@ -1028,9 +1021,10 @@ input:-webkit-autofill::first-line {
   }
 
   .add {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 1.5em;
     font-style: normal;
@@ -1042,11 +1036,9 @@ input:-webkit-autofill::first-line {
     text-decoration-thickness: auto;
     text-underline-offset: auto;
     text-underline-position: from-font;
-
   }
 
   .ip_agree[type="radio"] {
-
     appearance: none;
     /* 브라우저 기본 스타일 제거 */
     width: 3em;
@@ -1054,23 +1046,23 @@ input:-webkit-autofill::first-line {
 
     flex-shrink: 0;
     border-radius: 5px;
-    border: 1px solid #FFF;
-    background-color: #1C1B1A;
+    border: 1px solid #fff;
+    background-color: #1c1b1a;
     /* 체크박스 배경색 */
   }
 
   .semi_if {
     margin-top: 8%;
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 1.7em;
     font-style: normal;
     font-weight: 400;
     line-height: 52px;
     /* 216.667% */
-
   }
 
   #ip_age::placeholder,
@@ -1078,12 +1070,13 @@ input:-webkit-autofill::first-line {
   .ip_id::placeholder,
   .ip_liner::placeholder,
   .ip_st::placeholder {
-    color: #BBBBBB;
+    color: #bbbbbb;
   }
 
   .cont {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 700;
     font-style: normal;
     font-size: 2em;
@@ -1103,8 +1096,9 @@ input:-webkit-autofill::first-line {
   .second,
   .third,
   .quad {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 500;
     font-style: normal;
     font-size: 0.8em;
@@ -1116,8 +1110,9 @@ input:-webkit-autofill::first-line {
   .third_content,
   .quad_f_content,
   .quad_s_content {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 400;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -1126,11 +1121,11 @@ input:-webkit-autofill::first-line {
 
   #ip_name,
   #ip_age {
-    color: #FFF;
+    color: #fff;
   }
 }
 
-@media all and (min-width:1025px) and (max-width:1919px) {
+@media all and (min-width: 1025px) and (max-width: 1919px) {
   body {
     margin: 0px;
   }
@@ -1150,18 +1145,14 @@ input:-webkit-autofill::first-line {
     padding-top: 15%;
   }
 
-
-
   .if_reg {
     color: white;
     text-align: center;
     padding-top: 2%;
   }
 
-
-
   .if_bt {
-    font-family: 'ONE-Mobile-Title';
+    font-family: "ONE-Mobile-Title";
     color: #000;
     font-size: 2em;
     font-style: normal;
@@ -1171,9 +1162,8 @@ input:-webkit-autofill::first-line {
     width: 200%;
     /* height: 10vh; */
     border-radius: 18px;
-    background: #FFF;
+    background: #fff;
   }
-
 
   .if_bt img {
     width: 50%;
@@ -1194,7 +1184,6 @@ input:-webkit-autofill::first-line {
     color: white;
   }
 
-
   .form_all_ct {
     gap: 70px;
   }
@@ -1208,14 +1197,13 @@ input:-webkit-autofill::first-line {
   .one_liner,
   .it_gender,
   .student {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 600;
     font-style: normal;
     font-size: 2.5em;
     line-height: normal;
-
-
   }
 
   .form_all_ct {
@@ -1231,13 +1219,13 @@ input:-webkit-autofill::first-line {
   .one_liner,
   .it_gender,
   .student {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 600;
     font-style: normal;
     font-size: 1.5em;
     line-height: normal;
-
   }
 
   .name_ct input,
@@ -1246,12 +1234,12 @@ input:-webkit-autofill::first-line {
     margin: 0px;
     padding: 0px;
     /* height: 8vh; */
-    background-color: #1C1B1A;
+    background-color: #1c1b1a;
     border-radius: 12px;
-    border: 1px solid #FFF;
-    border-color: #FFFFFF;
+    border: 1px solid #fff;
+    border-color: #ffffff;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #ip_name,
@@ -1261,10 +1249,11 @@ input:-webkit-autofill::first-line {
   #dp_mbti,
   #dp_major,
   .ip_st {
-    font-family: 'Pretendard-Regular';
-    color: #BBBBBB;
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-size: 1.0em;
+    font-family: "Pretendard-Regular";
+    color: #bbbbbb;
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+    font-size: 1em;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -1275,28 +1264,28 @@ input:-webkit-autofill::first-line {
   .it_none,
   .gender_man,
   .gender_woman {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-size: 2em;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
   }
 
-
   .gender_man,
   .gender_woman {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 2em;
     font-style: normal;
     font-weight: 500;
     color: white;
     line-height: normal;
-
   }
 
   .bottom {
@@ -1306,13 +1295,14 @@ input:-webkit-autofill::first-line {
   }
 
   .sus {
-    font-family: 'ONE-Mobile-Title';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-family: "ONE-Mobile-Title";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff")
+      format("woff");
     width: 80%;
     height: 10vh;
     flex-shrink: 0;
     border-radius: 18px;
-    background: #FFF;
+    background: #fff;
     font-size: 2.5em;
     font-style: normal;
     font-weight: 400;
@@ -1331,21 +1321,22 @@ input:-webkit-autofill::first-line {
   }
 
   .agree {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 2.5em;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-
   }
 
   .add {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 1.8em;
     font-style: normal;
@@ -1357,11 +1348,9 @@ input:-webkit-autofill::first-line {
     text-decoration-thickness: auto;
     text-underline-offset: auto;
     text-underline-position: from-font;
-
   }
 
   .ip_agree[type="radio"] {
-
     appearance: none;
     /* 브라우저 기본 스타일 제거 */
     width: 3.5em;
@@ -1369,23 +1358,23 @@ input:-webkit-autofill::first-line {
 
     flex-shrink: 0;
     border-radius: 5px;
-    border: 1px solid #FFF;
-    background-color: #1C1B1A;
+    border: 1px solid #fff;
+    background-color: #1c1b1a;
     /* 체크박스 배경색 */
   }
 
   .semi_if {
     margin-top: 8%;
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 2em;
     font-style: normal;
     font-weight: 400;
     line-height: 52px;
     /* 216.667% */
-
   }
 
   #ip_age::placeholder,
@@ -1393,12 +1382,13 @@ input:-webkit-autofill::first-line {
   .ip_id::placeholder,
   .ip_liner::placeholder,
   .ip_st::placeholder {
-    color: #BBBBBB;
+    color: #bbbbbb;
   }
 
   .cont {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 700;
     font-style: normal;
     font-size: 2em;
@@ -1418,8 +1408,9 @@ input:-webkit-autofill::first-line {
   .second,
   .third,
   .quad {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 500;
     font-style: normal;
     font-size: 0.8em;
@@ -1431,8 +1422,9 @@ input:-webkit-autofill::first-line {
   .third_content,
   .quad_f_content,
   .quad_s_content {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 400;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -1441,11 +1433,11 @@ input:-webkit-autofill::first-line {
 
   #ip_name,
   #ip_age {
-    color: #FFF;
+    color: #fff;
   }
 }
 
-@media all and (min-width:1920px) {
+@media all and (min-width: 1920px) {
   body {
     margin: 0px;
   }
@@ -1465,17 +1457,14 @@ input:-webkit-autofill::first-line {
     padding-top: 15%;
   }
 
-
   .if_reg {
     color: white;
     text-align: center;
     padding-top: 2%;
   }
 
-
-
   .if_bt {
-    font-family: 'ONE-Mobile-Title';
+    font-family: "ONE-Mobile-Title";
     color: #000;
     font-size: 2em;
     font-style: normal;
@@ -1485,10 +1474,8 @@ input:-webkit-autofill::first-line {
     width: 200%;
     /* height: 10vh; */
     border-radius: 18px;
-    background: #FFF;
+    background: #fff;
   }
-
-
 
   .if_bt img {
     width: 50%;
@@ -1522,14 +1509,13 @@ input:-webkit-autofill::first-line {
   .one_liner,
   .it_gender,
   .student {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 600;
     font-style: normal;
     font-size: 2.5em;
     line-height: normal;
-
-
   }
 
   .form_all_ct {
@@ -1545,13 +1531,13 @@ input:-webkit-autofill::first-line {
   .one_liner,
   .it_gender,
   .student {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 600;
     font-style: normal;
     font-size: 1.5em;
     line-height: normal;
-
   }
 
   #ip_name,
@@ -1561,10 +1547,11 @@ input:-webkit-autofill::first-line {
   #dp_mbti,
   #dp_major,
   .ip_st {
-    font-family: 'Pretendard-Regular';
-    color: #BBBBBB;
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-size: 1.0em;
+    font-family: "Pretendard-Regular";
+    color: #bbbbbb;
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+    font-size: 1em;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -1576,12 +1563,12 @@ input:-webkit-autofill::first-line {
     margin: 0px;
     padding: 0px;
     height: 6vh;
-    background-color: #1C1B1A;
+    background-color: #1c1b1a;
     border-radius: 12px;
-    border: 1px solid #FFF;
-    border-color: #FFFFFF;
+    border: 1px solid #fff;
+    border-color: #ffffff;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .it_men,
@@ -1589,28 +1576,28 @@ input:-webkit-autofill::first-line {
   .it_none,
   .gender_man,
   .gender_woman {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-size: 2em;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
   }
 
-
   .gender_man,
   .gender_woman {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 2em;
     font-style: normal;
     font-weight: 500;
     color: white;
     line-height: normal;
-
   }
 
   .bottom {
@@ -1620,13 +1607,14 @@ input:-webkit-autofill::first-line {
   }
 
   .sus {
-    font-family: 'ONE-Mobile-Title';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-family: "ONE-Mobile-Title";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff")
+      format("woff");
     width: 80%;
     height: 10vh;
     flex-shrink: 0;
     border-radius: 18px;
-    background: #FFF;
+    background: #fff;
     font-size: 2.5em;
     font-style: normal;
     font-weight: 400;
@@ -1645,21 +1633,22 @@ input:-webkit-autofill::first-line {
   }
 
   .agree {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 2.5em;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-
   }
 
   .add {
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 1.8em;
     font-style: normal;
@@ -1671,11 +1660,9 @@ input:-webkit-autofill::first-line {
     text-decoration-thickness: auto;
     text-underline-offset: auto;
     text-underline-position: from-font;
-
   }
 
   .ip_agree[type="radio"] {
-
     appearance: none;
     /* 브라우저 기본 스타일 제거 */
     width: 3em;
@@ -1683,23 +1670,23 @@ input:-webkit-autofill::first-line {
 
     flex-shrink: 0;
     border-radius: 5px;
-    border: 1px solid #FFF;
-    background-color: #1C1B1A;
+    border: 1px solid #fff;
+    background-color: #1c1b1a;
     /* 체크박스 배경색 */
   }
 
   .semi_if {
     margin-top: 8%;
-    color: #FFF;
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    color: #fff;
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
 
     font-size: 2.5em;
     font-style: normal;
     font-weight: 400;
     line-height: 52px;
     /* 216.667% */
-
   }
 
   #ip_age::placeholder,
@@ -1707,12 +1694,13 @@ input:-webkit-autofill::first-line {
   .ip_id::placeholder,
   .ip_liner::placeholder,
   .ip_st::placeholder {
-    color: #BBBBBB;
+    color: #bbbbbb;
   }
 
   .cont {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 700;
     font-style: normal;
     font-size: 2em;
@@ -1732,8 +1720,9 @@ input:-webkit-autofill::first-line {
   .second,
   .third,
   .quad {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 500;
     font-style: normal;
     font-size: 0.8em;
@@ -1745,8 +1734,9 @@ input:-webkit-autofill::first-line {
   .third_content,
   .quad_f_content,
   .quad_s_content {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 400;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -1755,14 +1745,15 @@ input:-webkit-autofill::first-line {
 
   #ip_name,
   #ip_age {
-    color: #FFF;
+    color: #fff;
   }
 }
 
-@media all and (min-width:0px) and (max-width:800px) {
+@media all and (min-width: 0px) and (max-width: 800px) {
   .cont {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 700;
     font-style: normal;
     font-size: 1.5em;
@@ -1782,8 +1773,9 @@ input:-webkit-autofill::first-line {
   .second,
   .third,
   .quad {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 500;
     font-style: normal;
     font-size: 0.8em;
@@ -1795,8 +1787,9 @@ input:-webkit-autofill::first-line {
   .third_content,
   .quad_f_content,
   .quad_s_content {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
     font-weight: 400;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -1829,6 +1822,6 @@ input:-webkit-autofill::first-line {
 
   #ip_name,
   #ip_age {
-    color: #FFF;
+    color: #fff;
   }
 }
