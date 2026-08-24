@@ -44,6 +44,7 @@ function CheckInfoPage() {
 
     try {
       const data = await checkUserInfo(name.trim(), studentNumber.trim())
+      console.log('[을램] check-info 응답:', JSON.stringify(data))
       if (data) {
         setUserInfo(data)
 
@@ -60,7 +61,31 @@ function CheckInfoPage() {
         setShowDraw(true)
       }
     } catch (error) {
-      setErrors({ form: '등록된 정보를 찾을 수 없습니다. 이름과 전화번호를 다시 확인해주세요.' })
+      console.error('[을램] check-info 실패:', error)
+      if (error.response && error.response.data) {
+        const { errorCode, message } = error.response.data
+        console.error(`[을램] errorCode: ${errorCode}, message: ${message}`)
+        switch (errorCode) {
+          case 'USER_NOT_FOUND':
+            setErrors({ form: '등록된 정보를 찾을 수 없습니다. 이름과 전화번호를 다시 확인해주세요.' })
+            break
+          case 'ALREADY_DRAWN':
+            // 이미 뽑은 사용자 — 로컬스토리지에 저장된 결과가 있으면 바로 표시
+            {
+              const savedFriend = getSavedResult()
+              if (savedFriend) {
+                setAlreadyDrawnFriend(savedFriend)
+              } else {
+                setErrors({ form: '이미 뽑기를 완료했어요. 결과가 로컬에 저장되어 있지 않습니다.' })
+              }
+            }
+            break
+          default:
+            setErrors({ form: message || '오류가 발생했습니다.' })
+        }
+      } else {
+        setErrors({ form: '서버에 연결할 수 없습니다. 네트워크를 확인해주세요.' })
+      }
     }
   }
 

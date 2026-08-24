@@ -21,7 +21,7 @@ function LoadingPage() {
     const timer = setTimeout(async () => {
       try {
         const data = await drawFriend(name, studentNumber)
-        console.log('draw 응답:', JSON.stringify(data))
+        console.log('[을램] draw 응답:', JSON.stringify(data))
 
         // 서버 응답 구조에 따라 유연하게 파싱
         let friend = null
@@ -61,7 +61,26 @@ function LoadingPage() {
           navigate('/')
         }
       } catch (error) {
-        console.error('뽑기 실패:', error)
+        console.error('[을램] 뽑기 실패:', error)
+        if (error.response && error.response.data) {
+          const { errorCode, message } = error.response.data
+          console.error(`[을램] errorCode: ${errorCode}, message: ${message}`)
+          switch (errorCode) {
+            case 'USER_NOT_FOUND':
+              alert('정보를 먼저 등록해주세요.')
+              break
+            case 'ALREADY_DRAWN':
+              alert('이미 뽑기를 완료했어요. 결과를 확인해주세요.')
+              break
+            case 'NO_MATCHING_USER':
+              alert('아직 뽑을 수 있는 상대가 없어요. 나중에 다시 시도해주세요.')
+              break
+            default:
+              alert(message || '오류가 발생했습니다.')
+          }
+        } else {
+          alert('서버에 연결할 수 없습니다.')
+        }
         navigate('/')
       }
     }, 2500)

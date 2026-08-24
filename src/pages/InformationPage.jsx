@@ -105,13 +105,19 @@ function InformationPage() {
       alert('등록이 완료되었습니다!')
       navigate('/')
     } catch (error) {
-      if (error.response) {
-        if (error.response.status === 400) {
-          alert('형식이 올바르지 않습니다.')
-        } else if (error.response.status === 500) {
-          alert('이미 등록된 사용자입니다.')
-        } else {
-          alert('알 수 없는 오류가 발생했습니다.')
+      console.error('[을램] 등록 실패:', error)
+      if (error.response && error.response.data) {
+        const { errorCode, message } = error.response.data
+        console.error(`[을램] errorCode: ${errorCode}, message: ${message}`)
+        switch (errorCode) {
+          case 'USER_ALREADY_EXISTS':
+            alert('이미 등록된 사용자입니다.')
+            break
+          case 'INVALID_REQUEST':
+            alert('입력값이 올바르지 않습니다. 다시 확인해주세요.')
+            break
+          default:
+            alert(message || '알 수 없는 오류가 발생했습니다.')
         }
       } else {
         alert('서버에 연결할 수 없습니다. 네트워크를 확인해주세요.')

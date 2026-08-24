@@ -80,31 +80,8 @@
 }
 
 /* === Font Loading === */
-@font-face {
-  font-family: 'Toss Product Sans';
-  src: url('https://static.toss.im/assets/homepage/tossface/font/TossProductSans-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Toss Product Sans';
-  src: url('https://static.toss.im/assets/homepage/tossface/font/TossProductSans-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Toss Product Sans';
-  src: url('https://static.toss.im/assets/homepage/tossface/font/TossProductSans-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Pretendard Variable loaded via @import at top of file */
+/* Toss Product Sans CDN은 외부 접근이 차단(403)되어 Pretendard Variable로 대체 */
+/* Pretendard Variable은 @import로 로드 (파일 상단) */
 
 /* === Base Styles === */
 html {
