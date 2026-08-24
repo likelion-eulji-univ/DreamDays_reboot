@@ -19,16 +19,15 @@ function LoadingPage() {
     const timer = setTimeout(async () => {
       try {
         const data = await drawFriend(name, studentNumber)
-        if (data.drawResult && data.drawResult.drawnUser) {
-          const drawnUser = data.drawResult.drawnUser
+        if (data && data.name) {
           const params = new URLSearchParams({
-            name: drawnUser.name || '',
-            age: drawnUser.age || '',
-            instagramId: drawnUser.instagramId || '',
-            department: drawnUser.department || '',
-            gender: drawnUser.gender || '',
-            mbti: drawnUser.mbti || '',
-            bio: drawnUser.bio || '',
+            name: data.name || '',
+            age: data.age || '',
+            instagramId: data.instagramId || '',
+            department: data.department || '',
+            gender: data.gender || '',
+            mbti: data.mbti || '',
+            bio: data.bio || '',
           })
           navigate(`/result?${params.toString()}`)
         } else {

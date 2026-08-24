@@ -96,9 +96,9 @@ function InformationPage() {
 
     const data = {
       name: formData.name,
-      studentNumber: formData.studentNumber,
+      studentNumber: Number(formData.studentNumber),
       instagramId: formData.instagramId,
-      age: formData.age,
+      age: Number(formData.age),
       gender: formData.gender,
       department: formData.department,
       mbti: formData.mbti,
