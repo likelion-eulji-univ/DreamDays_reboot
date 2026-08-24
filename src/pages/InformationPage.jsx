@@ -90,11 +90,11 @@ function InformationPage() {
 
     const data = {
       name: formData.name,
-      studentNumber: Number(formData.studentNumber),
+      phoneNumber: Number(formData.studentNumber),
       instagramId: formData.instagramId,
       age: Number(formData.age),
       gender: formData.gender,
-      department: formData.department,
+      school: formData.department,
       mbti: formData.mbti,
       selectGender: formData.selectGender,
       bio: formData.bio,

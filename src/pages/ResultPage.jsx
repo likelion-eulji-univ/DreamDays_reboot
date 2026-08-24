@@ -16,7 +16,7 @@ function ResultPage() {
       name: searchParams.get('name') || '',
       age: searchParams.get('age') || '',
       instagramId: searchParams.get('instagramId') || '',
-      department: searchParams.get('department') || '',
+      school: searchParams.get('school') || '',
       gender: searchParams.get('gender') || '',
       mbti: searchParams.get('mbti') || '',
       bio: searchParams.get('bio') || '',
@@ -55,7 +55,7 @@ function ResultPage() {
     )
   }
 
-  const { name, age, instagramId, department, gender, mbti, bio } = friend
+  const { name, age, instagramId, school, gender, mbti, bio } = friend
 
   return (
     <div className="result">
@@ -73,7 +73,7 @@ function ResultPage() {
             </div>
             <div className="result__card-name">{name}</div>
             <div className="result__card-tags">
-              <span className="result__tag">{department}</span>
+              <span className="result__tag">{school}</span>
               <span className="result__tag">{mbti}</span>
             </div>
           </div>
@@ -94,7 +94,7 @@ function ResultPage() {
               </div>
               <div className="result__info-item">
                 <span className="result__info-label">학교</span>
-                <span className="result__info-value">{department}</span>
+                <span className="result__info-value">{school}</span>
               </div>
             </div>
 

@@ -11,16 +11,16 @@ function LoadingPage() {
 
   useEffect(() => {
     const name = searchParams.get('name')
-    const studentNumber = searchParams.get('studentNumber')
+    const phoneNumber = searchParams.get('phoneNumber')
 
-    if (!name || !studentNumber) {
+    if (!name || !phoneNumber) {
       navigate('/')
       return
     }
 
     const timer = setTimeout(async () => {
       try {
-        const data = await drawFriend(name, studentNumber)
+        const data = await drawFriend(name, phoneNumber)
         console.log('[을램] draw 응답:', JSON.stringify(data))
 
         // 서버 응답 구조에 따라 유연하게 파싱
@@ -40,7 +40,7 @@ function LoadingPage() {
             name: String(friend.name || ''),
             age: String(friend.age || ''),
             instagramId: String(friend.instagramId || ''),
-            department: String(friend.department || ''),
+            school: String(friend.school || friend.department || ''),
             gender: String(friend.gender || ''),
             mbti: String(friend.mbti || ''),
             bio: String(friend.bio || ''),
@@ -50,7 +50,7 @@ function LoadingPage() {
           localStorage.setItem(STORAGE_KEY, JSON.stringify({
             drawn: true,
             myName: name,
-            myStudentNumber: studentNumber,
+            myPhoneNumber: phoneNumber,
             friend: friendData,
           }))
 

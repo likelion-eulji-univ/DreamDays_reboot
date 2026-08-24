@@ -15,16 +15,16 @@ export async function createUserInfo(data) {
   return response.data
 }
 
-// 등록 확인 (이름 + 학번)
-export async function checkUserInfo(name, studentNumber) {
+// 등록 확인 (이름 + 전화번호)
+export async function checkUserInfo(name, phoneNumber) {
   const response = await api.get('/api/users/check-info', {
-    params: { name, studentNumber },
+    params: { name, phoneNumber },
   })
   return response.data
 }
 
 // 친구 뽑기
-export async function drawFriend(name, studentNumber) {
-  const response = await api.post('/api/draw', { name, studentNumber: Number(studentNumber) })
+export async function drawFriend(name, phoneNumber) {
+  const response = await api.post('/api/draw', { name, phoneNumber: Number(phoneNumber) })
   return response.data
 }

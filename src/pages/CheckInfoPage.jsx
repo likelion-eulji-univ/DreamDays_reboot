@@ -22,7 +22,7 @@ function getSavedResult() {
 function CheckInfoPage() {
   const navigate = useNavigate()
   const [name, setName] = useState('')
-  const [studentNumber, setStudentNumber] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
   const [userInfo, setUserInfo] = useState(null)
   const [showDraw, setShowDraw] = useState(false)
   const [alreadyDrawnFriend, setAlreadyDrawnFriend] = useState(null)
@@ -33,7 +33,7 @@ function CheckInfoPage() {
 
     const newErrors = {}
     if (!name.trim()) newErrors.name = '이름을 입력해주세요'
-    if (!studentNumber.trim()) newErrors.studentNumber = '전화번호를 입력해주세요'
+    if (!phoneNumber.trim()) newErrors.phoneNumber = '전화번호를 입력해주세요'
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors)
@@ -43,7 +43,7 @@ function CheckInfoPage() {
     setErrors({})
 
     try {
-      const data = await checkUserInfo(name.trim(), studentNumber.trim())
+      const data = await checkUserInfo(name.trim(), phoneNumber.trim())
       console.log('[을램] check-info 응답:', JSON.stringify(data))
       if (data) {
         setUserInfo(data)
@@ -91,13 +91,13 @@ function CheckInfoPage() {
 
   const handleDrawFriend = () => {
     if (userInfo) {
-      navigate(`/loading?name=${encodeURIComponent(userInfo.name)}&studentNumber=${encodeURIComponent(userInfo.studentNumber)}`)
+      navigate(`/loading?name=${encodeURIComponent(userInfo.name)}&phoneNumber=${encodeURIComponent(userInfo.phoneNumber || userInfo.studentNumber)}`)
     }
   }
 
   // 이미 뽑은 결과가 있으면 바로 결과 카드 표시
   if (alreadyDrawnFriend) {
-    const { name: fName, age, instagramId, department, gender, mbti, bio } = alreadyDrawnFriend
+    const { name: fName, age, instagramId, school, gender, mbti, bio } = alreadyDrawnFriend
     return (
       <div className="check">
         <header className="check__header">
@@ -120,7 +120,7 @@ function CheckInfoPage() {
             </div>
             <div className="check__result-name">{fName}</div>
             <div className="check__result-tags">
-              <span className="check__result-tag">{department}</span>
+              <span className="check__result-tag">{school}</span>
               <span className="check__result-tag">{mbti}</span>
             </div>
 
@@ -197,14 +197,14 @@ function CheckInfoPage() {
                 <label className="check__label">전화번호</label>
                 <input
                   type="text"
-                  className={`check__input ${errors.studentNumber || errors.form ? 'check__input--error' : ''}`}
-                  value={studentNumber}
-                  onChange={(e) => { setStudentNumber(e.target.value); setErrors({}) }}
+                  className={`check__input ${errors.phoneNumber || errors.form ? 'check__input--error' : ''}`}
+                  value={phoneNumber}
+                  onChange={(e) => { setPhoneNumber(e.target.value); setErrors({}) }}
                   placeholder="- 없이 숫자만 입력하세요"
                   inputMode="numeric"
                   maxLength={11}
                 />
-                {errors.studentNumber && <span className="check__error">{errors.studentNumber}</span>}
+                {errors.phoneNumber && <span className="check__error">{errors.phoneNumber}</span>}
               </div>
 
               {errors.form && <span className="check__error">{errors.form}</span>}
@@ -230,7 +230,7 @@ function CheckInfoPage() {
                 </div>
                 <div className="check__draw-row">
                   <span className="check__draw-label">전화번호</span>
-                  <span className="check__draw-value">{userInfo?.studentNumber}</span>
+                  <span className="check__draw-value">{userInfo?.phoneNumber || userInfo?.studentNumber}</span>
                 </div>
               </div>
             </div>
