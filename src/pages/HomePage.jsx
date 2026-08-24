@@ -1,83 +1,57 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../styles/HomePage.css'
 
 function HomePage() {
   const navigate = useNavigate()
-  const [animating, setAnimating] = useState('')
-
-  const handleCheckClick = () => {
-    setAnimating('check')
-    setTimeout(() => {
-      navigate('/check')
-    }, 1000)
-  }
-
-  const handleRegisterClick = () => {
-    setAnimating('register')
-    setTimeout(() => {
-      navigate('/register')
-    }, 1000)
-  }
 
   return (
-    <div className="main">
-      <div className={`orange ${animating === 'check' ? 'maxWidth' : ''} ${animating === 'register' ? 'minWidth' : ''}`}>
-        <div className={`orangeDisplay ${animating ? 'none' : ''}`}>
-          <div className="hello">
-            <img src="/img/helloFriends.svg" alt="helloFriends" />
-          </div>
-          <section>
-            <div className="preRe">
-              <img src="/img/IPreRegistered.svg" alt="preRegister" />
+    <div className="home">
+      <div className="home__container">
+        <header className="home__brand">
+          <div className="home__emoji" role="img" aria-label="wave">👋</div>
+          <h1 className="home__title">HELLO FRIENDS</h1>
+          <p className="home__subtitle">
+            을지대 친구 매칭 서비스<br />
+            새로운 인연을 만나보세요
+          </p>
+        </header>
+
+        <div className="home__actions">
+          <button
+            className="home__card home__card--primary"
+            onClick={() => navigate('/check')}
+            aria-label="사전등록 확인 및 친구 뽑기"
+          >
+            <div className="home__card-icon">🎲</div>
+            <div className="home__card-content">
+              <div className="home__card-title">친구 뽑기</div>
+              <div className="home__card-desc">이미 등록하셨나요? 매칭된 친구를 확인하세요</div>
             </div>
-            <div className="titleV">
-              <div>
-                <img className="big" src="/img/preRegister.svg" alt="preRegister" />
-              </div>
-              <div>
-                <img className="mark" src="/img/V.svg" alt="V" />
-              </div>
+            <span className="home__card-arrow">→</span>
+          </button>
+
+          <button
+            className="home__card home__card--secondary"
+            onClick={() => navigate('/register')}
+            aria-label="새로 등록하기"
+          >
+            <div className="home__card-icon">✍️</div>
+            <div className="home__card-content">
+              <div className="home__card-title">새로 등록하기</div>
+              <div className="home__card-desc">처음이라면 프로필을 등록해주세요</div>
             </div>
-          </section>
-          <section className="button">
-            <div className="explainButton">
-              <img src="/img/preRegisterClick.svg" alt="preRegisterClick" />
-            </div>
-            <button className="checkInfo" onClick={handleCheckClick}>
-              <img src="/img/preRegisterButton.svg" alt="button" />
-            </button>
-          </section>
+            <span className="home__card-arrow">→</span>
+          </button>
         </div>
-      </div>
-      <img className={`likelion ${animating ? 'none' : ''}`} src="/img/eu-logo.svg" alt="likelion" />
-      <div className={`black ${animating === 'register' ? 'maxWidth' : ''} ${animating === 'check' ? 'minWidth' : ''}`}>
-        <div className={`blackDisplay ${animating ? 'none' : ''}`}>
-          <div className="hello right">
-            <img src="/img/helloFriends.svg" alt="helloFriends" />
-          </div>
-          <section>
-            <div className="preRe right">
-              <img src="/img/INotRegister.svg" alt="preRegister" />
-            </div>
-            <div className="titleX right">
-              <div className="mark right">
-                <img className="mark right" src="/img/X.svg" alt="X" />
-              </div>
-              <div className="big right">
-                <img className="big right" src="/img/register.svg" alt="preRegister" />
-              </div>
-            </div>
-          </section>
-          <section className="button right">
-            <div className="explainButton">
-              <img src="/img/registerClick.svg" alt="registerClick" />
-            </div>
-            <button className="registerInfo" onClick={handleRegisterClick}>
-              <img src="/img/registerButton.svg" alt="button" />
-            </button>
-          </section>
-        </div>
+
+        <footer className="home__footer">
+          <img
+            className="home__footer-logo"
+            src="/img/eu-logo.svg"
+            alt="을지대학교 멋쟁이사자처럼"
+          />
+          <span className="home__footer-text">을지대학교 멋쟁이사자처럼</span>
+        </footer>
       </div>
     </div>
   )
