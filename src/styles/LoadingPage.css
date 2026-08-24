@@ -1,0 +1,39 @@
+/* ===== LoadingPage ===== */
+
+.loading-main {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1C1B1A;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.loading-black {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.loading-helloFriends {
+  width: clamp(150px, 40vw, 312px);
+  height: auto;
+  margin-bottom: clamp(16px, 3vw, 26px);
+}
+
+.loading-loadingPage {
+  width: clamp(200px, 50vw, 658px);
+  height: auto;
+}
+
+.loading-logoLion {
+  margin-top: clamp(40px, 12vw, 130px);
+  margin-bottom: clamp(40px, 12vw, 130px);
+  width: clamp(80px, 20vw, 200px);
+  height: auto;
+}
