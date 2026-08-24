@@ -116,7 +116,7 @@ function CheckInfoPage() {
 
           <div className="check__result-card">
             <div className="check__result-avatar">
-              {gender === 'MALE' ? '🙋‍♂️' : '🙋‍♀️'}
+              {gender === '남성' ? '🙋‍♂️' : '🙋‍♀️'}
             </div>
             <div className="check__result-name">{fName}</div>
             <div className="check__result-tags">

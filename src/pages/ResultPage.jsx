@@ -69,7 +69,7 @@ function ResultPage() {
         <div className="result__card">
           <div className="result__card-header">
             <div className="result__card-avatar">
-              {gender === 'MALE' ? '🙋‍♂️' : '🙋‍♀️'}
+              {gender === '남성' ? '🙋‍♂️' : '🙋‍♀️'}
             </div>
             <div className="result__card-name">{name}</div>
             <div className="result__card-tags">
@@ -86,7 +86,7 @@ function ResultPage() {
               </div>
               <div className="result__info-item">
                 <span className="result__info-label">성별</span>
-                <span className="result__info-value">{gender === 'MALE' ? '남성' : gender === 'FEMALE' ? '여성' : gender}</span>
+                <span className="result__info-value">{gender}</span>
               </div>
               <div className="result__info-item">
                 <span className="result__info-label">MBTI</span>

@@ -218,8 +218,8 @@ function InformationPage() {
                   id="gender-male"
                   name="gender"
                   className="register__radio-input"
-                  checked={formData.gender === 'MALE'}
-                  onChange={() => handleChange('gender', 'MALE')}
+                  checked={formData.gender === '남성'}
+                  onChange={() => handleChange('gender', '남성')}
                 />
                 <label htmlFor="gender-male" className="register__radio-label">남성</label>
               </div>
@@ -229,8 +229,8 @@ function InformationPage() {
                   id="gender-female"
                   name="gender"
                   className="register__radio-input"
-                  checked={formData.gender === 'FEMALE'}
-                  onChange={() => handleChange('gender', 'FEMALE')}
+                  checked={formData.gender === '여성'}
+                  onChange={() => handleChange('gender', '여성')}
                 />
                 <label htmlFor="gender-female" className="register__radio-label">여성</label>
               </div>
@@ -299,8 +299,8 @@ function InformationPage() {
                   id="selectGender-male"
                   name="selectGender"
                   className="register__radio-input"
-                  checked={formData.selectGender === 'MALE'}
-                  onChange={() => handleChange('selectGender', 'MALE')}
+                  checked={formData.selectGender === '남성'}
+                  onChange={() => handleChange('selectGender', '남성')}
                 />
                 <label htmlFor="selectGender-male" className="register__radio-label">남성</label>
               </div>
@@ -310,8 +310,8 @@ function InformationPage() {
                   id="selectGender-female"
                   name="selectGender"
                   className="register__radio-input"
-                  checked={formData.selectGender === 'FEMALE'}
-                  onChange={() => handleChange('selectGender', 'FEMALE')}
+                  checked={formData.selectGender === '여성'}
+                  onChange={() => handleChange('selectGender', '여성')}
                 />
                 <label htmlFor="selectGender-female" className="register__radio-label">여성</label>
               </div>
