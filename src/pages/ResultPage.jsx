@@ -1,49 +1,26 @@
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import '../styles/ResultPage.css'
 
-const STORAGE_KEY = 'hf_draw_result'
-
 function ResultPage() {
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
 
-  // URL params 우선, 없으면 로컬스토리지에서 복원
-  let friend = null
+  const name = searchParams.get('name') || ''
+  const age = searchParams.get('age') || ''
+  const instagramId = searchParams.get('instagramId') || ''
+  const school = searchParams.get('school') || ''
+  const gender = searchParams.get('gender') || ''
+  const mbti = searchParams.get('mbti') || ''
+  const bio = searchParams.get('bio') || ''
 
-  const urlName = searchParams.get('name')
-  if (urlName) {
-    friend = {
-      name: searchParams.get('name') || '',
-      age: searchParams.get('age') || '',
-      instagramId: searchParams.get('instagramId') || '',
-      school: searchParams.get('school') || '',
-      gender: searchParams.get('gender') || '',
-      mbti: searchParams.get('mbti') || '',
-      bio: searchParams.get('bio') || '',
-    }
-  } else {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved) {
-        const parsed = JSON.parse(saved)
-        if (parsed.drawn && parsed.friend) {
-          friend = parsed.friend
-        }
-      }
-    } catch {
-      // ignore
-    }
-  }
-
-  // 데이터가 없으면 홈으로
-  if (!friend) {
+  if (!name && !instagramId) {
     return (
       <div className="result">
         <div className="result__content">
           <section className="result__hero">
             <div className="result__hero-emoji">🤔</div>
             <h1 className="result__hero-title">결과가 없어요</h1>
-            <p className="result__hero-desc">먼저 친구 뽑기를 진행해주세요</p>
+            <p className="result__hero-desc">먼저 매칭 결과 확인을 진행해주세요</p>
           </section>
           <div className="result__actions">
             <button className="result__button-primary" onClick={() => navigate('/')}>
@@ -54,8 +31,6 @@ function ResultPage() {
       </div>
     )
   }
-
-  const { name, age, instagramId, school, gender, mbti, bio } = friend
 
   return (
     <div className="result">

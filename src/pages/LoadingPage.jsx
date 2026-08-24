@@ -3,8 +3,6 @@ import { useSearchParams, useNavigate } from 'react-router-dom'
 import { drawFriend } from '../api'
 import '../styles/LoadingPage.css'
 
-const STORAGE_KEY = 'hf_draw_result'
-
 function LoadingPage() {
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
@@ -36,28 +34,18 @@ function LoadingPage() {
         }
 
         if (friend && (friend.name || friend.instagramId)) {
-          const friendData = {
+          const params = new URLSearchParams({
             name: String(friend.name || ''),
             age: String(friend.age || ''),
             instagramId: String(friend.instagramId || ''),
-            school: String(friend.school || friend.department || ''),
+            school: String(friend.school || ''),
             gender: String(friend.gender || ''),
             mbti: String(friend.mbti || ''),
             bio: String(friend.bio || ''),
-          }
-
-          // 로컬스토리지에 뽑기 결과 저장
-          localStorage.setItem(STORAGE_KEY, JSON.stringify({
-            drawn: true,
-            myName: name,
-            myPhoneNumber: phoneNumber,
-            friend: friendData,
-          }))
-
-          const params = new URLSearchParams(friendData)
+          })
           navigate(`/result?${params.toString()}`)
         } else {
-          console.error('뽑기 결과 파싱 실패. 응답 데이터:', data)
+          console.error('[을램] 뽑기 결과 파싱 실패. 응답 데이터:', data)
           navigate('/')
         }
       } catch (error) {
@@ -68,9 +56,6 @@ function LoadingPage() {
           switch (errorCode) {
             case 'USER_NOT_FOUND':
               alert('정보를 먼저 등록해주세요.')
-              break
-            case 'ALREADY_DRAWN':
-              alert('이미 뽑기를 완료했어요. 결과를 확인해주세요.')
               break
             case 'NO_MATCHING_USER':
               alert('아직 뽑을 수 있는 상대가 없어요. 나중에 다시 시도해주세요.')
@@ -95,7 +80,7 @@ function LoadingPage() {
           <div className="loading__spinner-ring" />
           <div className="loading__spinner-emoji">🎲</div>
         </div>
-        <h2 className="loading__title">친구를 찾고 있어요</h2>
+        <h2 className="loading__title">매칭 결과를 불러오고 있어요</h2>
         <p className="loading__desc">잠시만 기다려주세요...</p>
         <div className="loading__dots">
           <span className="loading__dot" />
