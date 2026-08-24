@@ -3,6 +3,8 @@ import { useSearchParams, useNavigate } from 'react-router-dom'
 import { drawFriend } from '../api'
 import '../styles/LoadingPage.css'
 
+const STORAGE_KEY = 'hf_draw_result'
+
 function LoadingPage() {
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
@@ -24,10 +26,8 @@ function LoadingPage() {
         // 서버 응답 구조에 따라 유연하게 파싱
         let friend = null
         if (data && data.name) {
-          // 스펙대로 최상위에 바로 필드가 있는 경우
           friend = data
         } else if (data && data.drawResult && data.drawResult.drawnUser) {
-          // 래핑된 구조인 경우
           friend = data.drawResult.drawnUser
         } else if (data && data.drawnUser) {
           friend = data.drawnUser
@@ -36,7 +36,7 @@ function LoadingPage() {
         }
 
         if (friend && (friend.name || friend.instagramId)) {
-          const params = new URLSearchParams({
+          const friendData = {
             name: String(friend.name || ''),
             age: String(friend.age || ''),
             instagramId: String(friend.instagramId || ''),
@@ -44,7 +44,17 @@ function LoadingPage() {
             gender: String(friend.gender || ''),
             mbti: String(friend.mbti || ''),
             bio: String(friend.bio || ''),
-          })
+          }
+
+          // 로컬스토리지에 뽑기 결과 저장
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            drawn: true,
+            myName: name,
+            myStudentNumber: studentNumber,
+            friend: friendData,
+          }))
+
+          const params = new URLSearchParams(friendData)
           navigate(`/result?${params.toString()}`)
         } else {
           console.error('뽑기 결과 파싱 실패. 응답 데이터:', data)

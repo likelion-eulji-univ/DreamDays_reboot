@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { checkUserInfo } from '../api'
 import '../styles/CheckInfoPage.css'
 
+const STORAGE_KEY = 'hf_draw_result'
+
 function CheckInfoPage() {
   const navigate = useNavigate()
   const [name, setName] = useState('')
@@ -10,6 +12,25 @@ function CheckInfoPage() {
   const [userInfo, setUserInfo] = useState(null)
   const [showDraw, setShowDraw] = useState(false)
   const [errors, setErrors] = useState({})
+
+  // 로컬스토리지에서 이전 뽑기 결과 확인
+  const getSavedResult = (userName, userStudentNumber) => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY)
+      if (!saved) return null
+      const parsed = JSON.parse(saved)
+      if (
+        parsed.drawn &&
+        parsed.myName === userName &&
+        parsed.myStudentNumber === String(userStudentNumber)
+      ) {
+        return parsed.friend
+      }
+    } catch {
+      return null
+    }
+    return null
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -29,6 +50,15 @@ function CheckInfoPage() {
       const data = await checkUserInfo(name.trim(), studentNumber.trim())
       if (data) {
         setUserInfo(data)
+
+        // 이미 뽑기를 한 사용자라면 바로 결과 페이지로
+        const savedFriend = getSavedResult(data.name, data.studentNumber)
+        if (savedFriend) {
+          const params = new URLSearchParams(savedFriend)
+          navigate(`/result?${params.toString()}`)
+          return
+        }
+
         setShowDraw(true)
       }
     } catch (error) {
