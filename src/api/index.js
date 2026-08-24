@@ -25,6 +25,6 @@ export async function checkUserInfo(name, phoneNumber) {
 
 // 친구 뽑기
 export async function drawFriend(name, phoneNumber) {
-  const response = await api.post('/api/draw', { name, phoneNumber: Number(phoneNumber) })
+  const response = await api.post('/api/draw', { name, phoneNumber })
   return response.data
 }
