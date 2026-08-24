@@ -5,32 +5,28 @@ import '../styles/CheckInfoPage.css'
 
 const STORAGE_KEY = 'hf_draw_result'
 
+function getSavedResult() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (!saved) return null
+    const parsed = JSON.parse(saved)
+    if (parsed.drawn && parsed.friend) {
+      return parsed.friend
+    }
+  } catch {
+    // ignore
+  }
+  return null
+}
+
 function CheckInfoPage() {
   const navigate = useNavigate()
   const [name, setName] = useState('')
   const [studentNumber, setStudentNumber] = useState('')
   const [userInfo, setUserInfo] = useState(null)
   const [showDraw, setShowDraw] = useState(false)
+  const [alreadyDrawnFriend, setAlreadyDrawnFriend] = useState(null)
   const [errors, setErrors] = useState({})
-
-  // 로컬스토리지에서 이전 뽑기 결과 확인
-  const getSavedResult = (userName, userStudentNumber) => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (!saved) return null
-      const parsed = JSON.parse(saved)
-      if (
-        parsed.drawn &&
-        parsed.myName === userName &&
-        parsed.myStudentNumber === String(userStudentNumber)
-      ) {
-        return parsed.friend
-      }
-    } catch {
-      return null
-    }
-    return null
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -51,11 +47,13 @@ function CheckInfoPage() {
       if (data) {
         setUserInfo(data)
 
-        // 이미 뽑기를 한 사용자라면 바로 결과 페이지로
-        const savedFriend = getSavedResult(data.name, data.studentNumber)
-        if (savedFriend) {
-          const params = new URLSearchParams(savedFriend)
-          navigate(`/result?${params.toString()}`)
+        // 서버에서 isDraw=true이거나 로컬스토리지에 결과가 있으면 바로 결과 표시
+        const savedFriend = getSavedResult()
+        if (data.isDraw || savedFriend) {
+          if (savedFriend) {
+            setAlreadyDrawnFriend(savedFriend)
+          }
+          setShowDraw(true)
           return
         }
 
@@ -70,6 +68,73 @@ function CheckInfoPage() {
     if (userInfo) {
       navigate(`/loading?name=${encodeURIComponent(userInfo.name)}&studentNumber=${encodeURIComponent(userInfo.studentNumber)}`)
     }
+  }
+
+  // 이미 뽑은 결과가 있으면 바로 결과 카드 표시
+  if (alreadyDrawnFriend) {
+    const { name: fName, age, instagramId, department, gender, mbti, bio } = alreadyDrawnFriend
+    return (
+      <div className="check">
+        <header className="check__header">
+          <button className="check__back" onClick={() => navigate('/')} aria-label="뒤로가기">
+            ←
+          </button>
+          <h1 className="check__header-title">매칭 결과</h1>
+        </header>
+
+        <div className="check__content">
+          <section className="check__hero">
+            <div className="check__hero-emoji">✅</div>
+            <h2 className="check__hero-title">이미 매칭이 완료되었어요</h2>
+            <p className="check__hero-desc">이전에 뽑은 친구 정보입니다</p>
+          </section>
+
+          <div className="check__result-card">
+            <div className="check__result-avatar">
+              {gender === '남성' ? '🙋‍♂️' : '🙋‍♀️'}
+            </div>
+            <div className="check__result-name">{fName}</div>
+            <div className="check__result-tags">
+              <span className="check__result-tag">{department}</span>
+              <span className="check__result-tag">{mbti}</span>
+            </div>
+
+            <div className="check__result-grid">
+              <div className="check__result-item">
+                <span className="check__result-label">나이</span>
+                <span className="check__result-value">{age}살</span>
+              </div>
+              <div className="check__result-item">
+                <span className="check__result-label">성별</span>
+                <span className="check__result-value">{gender}</span>
+              </div>
+            </div>
+
+            {bio && (
+              <div className="check__result-bio">
+                <span className="check__result-bio-label">한 줄 소개</span>
+                <p className="check__result-bio-text">"{bio}"</p>
+              </div>
+            )}
+
+            {instagramId && (
+              <a
+                href={`https://www.instagram.com/${instagramId}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="check__result-instagram"
+              >
+                📷 @{instagramId} 팔로우하기
+              </a>
+            )}
+          </div>
+
+          <button className="check__submit" onClick={() => navigate('/')}>
+            홈으로 돌아가기
+          </button>
+        </div>
+      </div>
+    )
   }
 
   return (
