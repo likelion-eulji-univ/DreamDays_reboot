@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'https://hellofriend-eulji.site'
+const BASE_URL = 'https://ssok.cloud'
 
 const api = axios.create({
   baseURL: BASE_URL,
