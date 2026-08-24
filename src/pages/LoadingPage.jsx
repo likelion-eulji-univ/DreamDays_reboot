@@ -19,18 +19,35 @@ function LoadingPage() {
     const timer = setTimeout(async () => {
       try {
         const data = await drawFriend(name, studentNumber)
+        console.log('draw 응답:', JSON.stringify(data))
+
+        // 서버 응답 구조에 따라 유연하게 파싱
+        let friend = null
         if (data && data.name) {
+          // 스펙대로 최상위에 바로 필드가 있는 경우
+          friend = data
+        } else if (data && data.drawResult && data.drawResult.drawnUser) {
+          // 래핑된 구조인 경우
+          friend = data.drawResult.drawnUser
+        } else if (data && data.drawnUser) {
+          friend = data.drawnUser
+        } else if (data && data.result) {
+          friend = data.result
+        }
+
+        if (friend && (friend.name || friend.instagramId)) {
           const params = new URLSearchParams({
-            name: data.name || '',
-            age: data.age || '',
-            instagramId: data.instagramId || '',
-            department: data.department || '',
-            gender: data.gender || '',
-            mbti: data.mbti || '',
-            bio: data.bio || '',
+            name: String(friend.name || ''),
+            age: String(friend.age || ''),
+            instagramId: String(friend.instagramId || ''),
+            department: String(friend.department || ''),
+            gender: String(friend.gender || ''),
+            mbti: String(friend.mbti || ''),
+            bio: String(friend.bio || ''),
           })
           navigate(`/result?${params.toString()}`)
         } else {
+          console.error('뽑기 결과 파싱 실패. 응답 데이터:', data)
           navigate('/')
         }
       } catch (error) {
