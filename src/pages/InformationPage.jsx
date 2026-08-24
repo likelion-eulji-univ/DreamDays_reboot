@@ -3,12 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { createUserInfo } from '../api'
 import '../styles/InformationPage.css'
 
-const DEPARTMENTS = [
-  '첨단학부', '자연계열학부', '인문사회계열학부', '자유전공학부',
-  '임상병리학과', '방사선학과', '안경광학과', '응급구조학과',
-  '의료경영학과', '물리치료학과', '치위생학과', '간호학과', '의예과'
-]
-
 const MBTI_LIST = [
   'INTJ', 'INTP', 'INFJ', 'INFP', 'ISTJ', 'ISFJ', 'ISTP', 'ISFP',
   'ENTJ', 'ENTP', 'ENFJ', 'ENFP', 'ESTJ', 'ESFJ', 'ESTP', 'ESFP'
@@ -48,8 +42,8 @@ function InformationPage() {
       newErrors.name = '이름을 입력해주세요'
       isValid = false
     }
-    if (!formData.studentNumber.trim() || formData.studentNumber.length !== 10) {
-      newErrors.studentNumber = '학번 10자리를 정확히 입력해주세요'
+    if (!formData.studentNumber.trim() || formData.studentNumber.length !== 11) {
+      newErrors.studentNumber = '전화번호 11자리를 정확히 입력해주세요'
       isValid = false
     }
     if (!formData.instagramId.trim()) {
@@ -64,8 +58,8 @@ function InformationPage() {
       newErrors.gender = '성별을 선택해주세요'
       isValid = false
     }
-    if (!formData.department) {
-      newErrors.department = '학과를 선택해주세요'
+    if (!formData.department.trim()) {
+      newErrors.department = '학교를 입력해주세요'
       isValid = false
     }
     if (!formData.mbti) {
@@ -157,18 +151,18 @@ function InformationPage() {
             {errors.name && <span className="register__error">{errors.name}</span>}
           </div>
 
-          {/* 학번 */}
+          {/* 전화번호 */}
           <div className="register__field">
             <label className="register__label">
-              학번 <span className="register__label-required">*</span>
+              전화번호 <span className="register__label-required">*</span>
             </label>
             <input
               type="text"
               className={`register__input ${errors.studentNumber ? 'register__input--error' : ''}`}
               value={formData.studentNumber}
               onChange={(e) => handleChange('studentNumber', e.target.value)}
-              maxLength={10}
-              placeholder="학번 10자리를 입력하세요"
+              maxLength={11}
+              placeholder="- 없이 숫자만 입력하세요"
               inputMode="numeric"
             />
             {errors.studentNumber && <span className="register__error">{errors.studentNumber}</span>}
@@ -238,21 +232,18 @@ function InformationPage() {
             {errors.gender && <span className="register__error">{errors.gender}</span>}
           </div>
 
-          {/* 학과 */}
+          {/* 학교 */}
           <div className="register__field">
             <label className="register__label">
-              학과 <span className="register__label-required">*</span>
+              학교 <span className="register__label-required">*</span>
             </label>
-            <select
-              className={`register__select ${!formData.department ? 'register__select--placeholder' : ''} ${errors.department ? 'register__select--error' : ''}`}
+            <input
+              type="text"
+              className={`register__input ${errors.department ? 'register__input--error' : ''}`}
               value={formData.department}
               onChange={(e) => handleChange('department', e.target.value)}
-            >
-              <option value="" hidden>학과를 선택해주세요</option>
-              {DEPARTMENTS.map((dept) => (
-                <option key={dept} value={dept}>{dept}</option>
-              ))}
-            </select>
+              placeholder="학교명을 입력하세요"
+            />
             {errors.department && <span className="register__error">{errors.department}</span>}
           </div>
 
@@ -366,7 +357,7 @@ function InformationPage() {
             <div className="register__modal-body">
               <p>을지대학교 멋쟁이사자처럼에서 드림데이즈 HELLO FRIENDS 이벤트를 위해 아래와 같이 개인정보를 수집합니다.</p>
               <ul>
-                <li>수집 항목: 이름, 학번, 인스타그램 ID, 나이, 성별, 학과, MBTI, 한 줄 소개</li>
+                <li>수집 항목: 이름, 전화번호, 인스타그램 ID, 나이, 성별, 학교, MBTI, 한 줄 소개</li>
                 <li>수집 목적: 친구 매칭 서비스 제공</li>
                 <li>보유 기간: 이벤트 종료 후 즉시 파기</li>
               </ul>

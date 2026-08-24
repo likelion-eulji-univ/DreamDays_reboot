@@ -33,7 +33,7 @@ function CheckInfoPage() {
 
     const newErrors = {}
     if (!name.trim()) newErrors.name = '이름을 입력해주세요'
-    if (!studentNumber.trim()) newErrors.studentNumber = '학번을 입력해주세요'
+    if (!studentNumber.trim()) newErrors.studentNumber = '전화번호를 입력해주세요'
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors)
@@ -60,7 +60,7 @@ function CheckInfoPage() {
         setShowDraw(true)
       }
     } catch (error) {
-      setErrors({ form: '등록된 정보를 찾을 수 없습니다. 이름과 학번을 다시 확인해주세요.' })
+      setErrors({ form: '등록된 정보를 찾을 수 없습니다. 이름과 전화번호를 다시 확인해주세요.' })
     }
   }
 
@@ -152,7 +152,7 @@ function CheckInfoPage() {
             <section className="check__hero">
               <div className="check__hero-emoji">🔍</div>
               <h2 className="check__hero-title">등록 정보 확인</h2>
-              <p className="check__hero-desc">등록할 때 사용한 이름과 학번을 입력해주세요</p>
+              <p className="check__hero-desc">등록할 때 사용한 이름과 전화번호를 입력해주세요</p>
             </section>
 
             <form className="check__form" onSubmit={handleSubmit} noValidate>
@@ -169,14 +169,15 @@ function CheckInfoPage() {
               </div>
 
               <div className="check__field">
-                <label className="check__label">학번</label>
+                <label className="check__label">전화번호</label>
                 <input
                   type="text"
                   className={`check__input ${errors.studentNumber || errors.form ? 'check__input--error' : ''}`}
                   value={studentNumber}
                   onChange={(e) => { setStudentNumber(e.target.value); setErrors({}) }}
-                  placeholder="학번을 입력하세요"
+                  placeholder="- 없이 숫자만 입력하세요"
                   inputMode="numeric"
+                  maxLength={11}
                 />
                 {errors.studentNumber && <span className="check__error">{errors.studentNumber}</span>}
               </div>
@@ -203,7 +204,7 @@ function CheckInfoPage() {
                   <span className="check__draw-value">{userInfo?.name}</span>
                 </div>
                 <div className="check__draw-row">
-                  <span className="check__draw-label">학번</span>
+                  <span className="check__draw-label">전화번호</span>
                   <span className="check__draw-value">{userInfo?.studentNumber}</span>
                 </div>
               </div>

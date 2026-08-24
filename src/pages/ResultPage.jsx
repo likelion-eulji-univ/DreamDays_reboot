@@ -93,7 +93,7 @@ function ResultPage() {
                 <span className="result__info-value">{mbti}</span>
               </div>
               <div className="result__info-item">
-                <span className="result__info-label">학과</span>
+                <span className="result__info-label">학교</span>
                 <span className="result__info-value">{department}</span>
               </div>
             </div>
