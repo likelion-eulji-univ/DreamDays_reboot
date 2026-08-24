@@ -9,7 +9,7 @@ function HomePage() {
       <div className="home__container">
         <header className="home__brand">
           <div className="home__emoji" role="img" aria-label="wave">👋</div>
-          <h1 className="home__title">HELLO FRIENDS</h1>
+          <h1 className="home__title">을램</h1>
           <p className="home__subtitle">
             을지대 친구 매칭 서비스<br />
             새로운 인연을 만나보세요

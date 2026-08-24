@@ -355,7 +355,7 @@ function InformationPage() {
           <div className="register__modal" onClick={(e) => e.stopPropagation()}>
             <h3 className="register__modal-title">개인정보 수집 및 이용 동의</h3>
             <div className="register__modal-body">
-              <p>을지대학교 멋쟁이사자처럼에서 드림데이즈 HELLO FRIENDS 이벤트를 위해 아래와 같이 개인정보를 수집합니다.</p>
+              <p>을지대학교 멋쟁이사자처럼에서 을램 이벤트를 위해 아래와 같이 개인정보를 수집합니다.</p>
               <ul>
                 <li>수집 항목: 이름, 전화번호, 인스타그램 ID, 나이, 성별, 학교, MBTI, 한 줄 소개</li>
                 <li>수집 목적: 친구 매칭 서비스 제공</li>
