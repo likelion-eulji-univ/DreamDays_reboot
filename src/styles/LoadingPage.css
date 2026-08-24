@@ -1,39 +1,112 @@
-/* ===== LoadingPage ===== */
-
-.loading-main {
-  box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
-  background-color: #1C1B1A;
+/* === LoadingPage === */
+.loading {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  background: var(--color-surface);
+  padding: var(--space-6);
 }
 
-.loading-black {
+.loading__content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  padding: 0 5%;
+  text-align: center;
+  animation: loadingFadeIn 0.5s ease;
 }
 
-.loading-helloFriends {
-  width: clamp(150px, 40vw, 312px);
-  height: auto;
-  margin-bottom: clamp(16px, 3vw, 26px);
+/* Spinner */
+.loading__spinner {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: var(--space-8);
 }
 
-.loading-loadingPage {
-  width: clamp(200px, 50vw, 658px);
-  height: auto;
+.loading__spinner-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid var(--color-border-light);
+  border-top-color: var(--color-primary);
+  animation: loadingSpin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-.loading-logoLion {
-  margin-top: clamp(40px, 12vw, 130px);
-  margin-bottom: clamp(40px, 12vw, 130px);
-  width: clamp(80px, 20vw, 200px);
-  height: auto;
+.loading__spinner-emoji {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  animation: loadingBounce 1.5s ease-in-out infinite;
+}
+
+/* Text */
+.loading__title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-foreground);
+  margin-bottom: var(--space-2);
+}
+
+.loading__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  margin-bottom: var(--space-7);
+}
+
+/* Animated dots */
+.loading__dots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.loading__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  animation: loadingDot 1.2s ease-in-out infinite;
+}
+
+.loading__dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading__dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Animations */
+@keyframes loadingSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes loadingBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes loadingDot {
+  0%, 80%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loadingFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

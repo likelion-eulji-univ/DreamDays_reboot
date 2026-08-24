@@ -16,7 +16,6 @@ const MBTI_LIST = [
 
 function InformationPage() {
   const navigate = useNavigate()
-  const [showForm, setShowForm] = useState(false)
   const [showModal, setShowModal] = useState(false)
 
   const [formData, setFormData] = useState({
@@ -32,45 +31,68 @@ function InformationPage() {
     agree: false,
   })
 
-  const [warnings, setWarnings] = useState({})
+  const [errors, setErrors] = useState({})
 
   const handleChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
     if (value) {
-      setWarnings((prev) => ({ ...prev, [field]: false }))
+      setErrors((prev) => ({ ...prev, [field]: '' }))
     }
   }
 
   const validateForm = () => {
-    const newWarnings = {}
+    const newErrors = {}
     let isValid = true
 
-    const requiredFields = ['name', 'studentNumber', 'instagramId', 'age', 'gender', 'department', 'mbti', 'bio', 'selectGender']
-    requiredFields.forEach((field) => {
-      if (!formData[field]) {
-        newWarnings[field] = true
-        isValid = false
-      }
-    })
-
+    if (!formData.name.trim()) {
+      newErrors.name = '이름을 입력해주세요'
+      isValid = false
+    }
+    if (!formData.studentNumber.trim() || formData.studentNumber.length !== 10) {
+      newErrors.studentNumber = '학번 10자리를 정확히 입력해주세요'
+      isValid = false
+    }
+    if (!formData.instagramId.trim()) {
+      newErrors.instagramId = '인스타 ID를 입력해주세요'
+      isValid = false
+    }
+    if (!formData.age.trim()) {
+      newErrors.age = '나이를 입력해주세요'
+      isValid = false
+    }
+    if (!formData.gender) {
+      newErrors.gender = '성별을 선택해주세요'
+      isValid = false
+    }
+    if (!formData.department) {
+      newErrors.department = '학과를 선택해주세요'
+      isValid = false
+    }
+    if (!formData.mbti) {
+      newErrors.mbti = 'MBTI를 선택해주세요'
+      isValid = false
+    }
+    if (!formData.bio.trim()) {
+      newErrors.bio = '한 줄 소개를 작성해주세요'
+      isValid = false
+    }
+    if (!formData.selectGender) {
+      newErrors.selectGender = '소개받고 싶은 성별을 선택해주세요'
+      isValid = false
+    }
     if (!formData.agree) {
-      newWarnings.agree = true
+      newErrors.agree = '개인정보 수집에 동의해주세요'
       isValid = false
     }
 
-    setWarnings(newWarnings)
+    setErrors(newErrors)
     return isValid
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if (!validateForm()) {
-      setTimeout(() => {
-        alert('모든 필드를 입력해야 합니다!')
-      }, 100)
-      return
-    }
+    if (!validateForm()) return
 
     const data = {
       name: formData.name,
@@ -104,257 +126,263 @@ function InformationPage() {
   }
 
   return (
-    <main className="info-main">
-      <section className="info-top">
-        <div className="info-hf">
-          <img src="/img/hf.svg" alt="hf" />
-        </div>
-        <div className="info-if-reg">
-          <img src="/img/if_reg.svg" alt="if_reg" />
-        </div>
-      </section>
+    <div className="register">
+      <header className="register__header">
+        <button className="register__back" onClick={() => navigate('/')} aria-label="뒤로가기">
+          ←
+        </button>
+        <h1 className="register__header-title">프로필 등록</h1>
+      </header>
 
-      {!showForm && (
-        <section className="info-middle">
-          <button className="info-if-bt" onClick={() => setShowForm(true)}>
-            정보등록하기
-          </button>
+      <div className="register__content">
+        <section className="register__hero">
+          <div className="register__hero-emoji">✍️</div>
+          <h2 className="register__hero-title">나를 소개해주세요</h2>
+          <p className="register__hero-desc">매칭될 친구에게 보여질 프로필이에요</p>
         </section>
-      )}
 
-      {showForm && (
-        <>
-          <section className="info-ip-form">
-            <form onSubmit={handleSubmit} id="form">
-              <div className="info-form-all-ct">
-                {/* 이름 */}
-                <section className="info-form-ct">
-                  <div className="info-name-ct">
-                    <div className="info-label">이름</div>
-                    <input
-                      type="text"
-                      value={formData.name}
-                      onChange={(e) => handleChange('name', e.target.value)}
-                      placeholder="이름을 입력하세요."
-                    />
-                    {warnings.name && <div className="info-waring">이름을 입력해주세요.</div>}
-                  </div>
-                </section>
+        <form className="register__form" onSubmit={handleSubmit} noValidate>
+          {/* 이름 */}
+          <div className="register__field">
+            <label className="register__label">
+              이름 <span className="register__label-required">*</span>
+            </label>
+            <input
+              type="text"
+              className={`register__input ${errors.name ? 'register__input--error' : ''}`}
+              value={formData.name}
+              onChange={(e) => handleChange('name', e.target.value)}
+              placeholder="이름을 입력하세요"
+            />
+            {errors.name && <span className="register__error">{errors.name}</span>}
+          </div>
 
-                {/* 학번 */}
-                <section className="info-form-ct">
-                  <div className="info-name-ct">
-                    <div className="info-label">학번</div>
-                    <input
-                      type="text"
-                      value={formData.studentNumber}
-                      onChange={(e) => handleChange('studentNumber', e.target.value)}
-                      minLength={10}
-                      maxLength={10}
-                      placeholder="학번을 입력하세요."
-                    />
-                    {warnings.studentNumber && <div className="info-waring">학번을 입력해주세요.</div>}
-                  </div>
-                </section>
+          {/* 학번 */}
+          <div className="register__field">
+            <label className="register__label">
+              학번 <span className="register__label-required">*</span>
+            </label>
+            <input
+              type="text"
+              className={`register__input ${errors.studentNumber ? 'register__input--error' : ''}`}
+              value={formData.studentNumber}
+              onChange={(e) => handleChange('studentNumber', e.target.value)}
+              maxLength={10}
+              placeholder="학번 10자리를 입력하세요"
+              inputMode="numeric"
+            />
+            {errors.studentNumber && <span className="register__error">{errors.studentNumber}</span>}
+          </div>
 
-                {/* 인스타 ID */}
-                <section className="info-form-ct">
-                  <div className="info-name-ct">
-                    <div className="info-label">인스타 ID</div>
-                    <input
-                      type="text"
-                      value={formData.instagramId}
-                      onChange={(e) => handleChange('instagramId', e.target.value)}
-                      placeholder="인스타 ID를 입력하세요."
-                    />
-                    {warnings.instagramId && <div className="info-waring">인스타 ID를 입력해주세요.</div>}
-                  </div>
-                </section>
+          {/* 인스타 ID */}
+          <div className="register__field">
+            <label className="register__label">
+              인스타그램 <span className="register__label-required">*</span>
+            </label>
+            <input
+              type="text"
+              className={`register__input ${errors.instagramId ? 'register__input--error' : ''}`}
+              value={formData.instagramId}
+              onChange={(e) => handleChange('instagramId', e.target.value)}
+              placeholder="@없이 아이디만 입력하세요"
+            />
+            {errors.instagramId && <span className="register__error">{errors.instagramId}</span>}
+          </div>
 
-                {/* 나이 */}
-                <section className="info-form-ct">
-                  <div className="info-name-ct">
-                    <div className="info-label">나이</div>
-                    <input
-                      type="text"
-                      value={formData.age}
-                      onChange={(e) => handleChange('age', e.target.value)}
-                      maxLength={2}
-                      placeholder="나이를 입력하세요."
-                    />
-                    {warnings.age && <div className="info-waring">나이를 입력해주세요.</div>}
-                  </div>
-                </section>
+          {/* 나이 */}
+          <div className="register__field">
+            <label className="register__label">
+              나이 <span className="register__label-required">*</span>
+            </label>
+            <input
+              type="text"
+              className={`register__input ${errors.age ? 'register__input--error' : ''}`}
+              value={formData.age}
+              onChange={(e) => handleChange('age', e.target.value)}
+              maxLength={2}
+              placeholder="나이를 입력하세요"
+              inputMode="numeric"
+            />
+            {errors.age && <span className="register__error">{errors.age}</span>}
+          </div>
 
-                {/* 성별 */}
-                <section className="info-form-ct">
-                  <div className="info-name-ct">
-                    <div className="info-label">성별</div>
-                    <div className="info-ip-ct">
-                      <div className="info-radio-ct">
-                        <input
-                          type="radio"
-                          name="gender"
-                          checked={formData.gender === '남성'}
-                          onChange={() => handleChange('gender', '남성')}
-                        />
-                        <div className="info-radio-label">남성</div>
-                      </div>
-                      <div className="info-radio-ct">
-                        <input
-                          type="radio"
-                          name="gender"
-                          checked={formData.gender === '여성'}
-                          onChange={() => handleChange('gender', '여성')}
-                        />
-                        <div className="info-radio-label">여성</div>
-                      </div>
-                    </div>
-                    {warnings.gender && <div className="info-waring">성별을 선택해주세요.</div>}
-                  </div>
-                </section>
-
-                {/* 학과 */}
-                <section className="info-form-ct">
-                  <div className="info-name-ct">
-                    <div className="info-label">학과</div>
-                    <select
-                      value={formData.department}
-                      onChange={(e) => handleChange('department', e.target.value)}
-                    >
-                      <option value="" hidden>학과를 선택해주세요</option>
-                      {DEPARTMENTS.map((dept) => (
-                        <option key={dept} value={dept}>{dept}</option>
-                      ))}
-                    </select>
-                    {warnings.department && <div className="info-waring">학과를 선택해주세요.</div>}
-                  </div>
-                </section>
-
-                {/* MBTI */}
-                <section className="info-form-ct">
-                  <div className="info-name-ct">
-                    <div className="info-label">MBTI</div>
-                    <select
-                      value={formData.mbti}
-                      onChange={(e) => handleChange('mbti', e.target.value)}
-                    >
-                      <option value="" hidden>MBTI를 선택하세요</option>
-                      {MBTI_LIST.map((m) => (
-                        <option key={m} value={m}>{m}</option>
-                      ))}
-                    </select>
-                    {warnings.mbti && <div className="info-waring">MBTI를 선택해주세요.</div>}
-                  </div>
-                </section>
-
-                {/* 한 줄 소개 */}
-                <section className="info-form-ct">
-                  <div className="info-name-ct">
-                    <div className="info-label">한 줄 소개</div>
-                    <input
-                      type="text"
-                      value={formData.bio}
-                      onChange={(e) => handleChange('bio', e.target.value)}
-                      maxLength={20}
-                      placeholder="본인을 한마디로 소개한다면?"
-                    />
-                    {warnings.bio && <div className="info-waring">한 줄 소개를 작성해주세요.</div>}
-                  </div>
-                </section>
-
-                {/* 소개 받고 싶은 성별 */}
-                <section className="info-form-ct">
-                  <div className="info-name-ct">
-                    <div className="info-label">소개 받고 싶은 성별</div>
-                    <div className="info-ip-ct">
-                      <div className="info-radio-ct">
-                        <input
-                          type="radio"
-                          name="selectGender"
-                          checked={formData.selectGender === '남성'}
-                          onChange={() => handleChange('selectGender', '남성')}
-                        />
-                        <div className="info-radio-label">남성</div>
-                      </div>
-                      <div className="info-radio-ct">
-                        <input
-                          type="radio"
-                          name="selectGender"
-                          checked={formData.selectGender === '여성'}
-                          onChange={() => handleChange('selectGender', '여성')}
-                        />
-                        <div className="info-radio-label">여성</div>
-                      </div>
-                    </div>
-                    {warnings.selectGender && <div className="info-waring">소개 받고 싶은 성별을 선택해주세요.</div>}
-                  </div>
-                </section>
+          {/* 성별 */}
+          <div className="register__field">
+            <label className="register__label">
+              성별 <span className="register__label-required">*</span>
+            </label>
+            <div className="register__radio-group">
+              <div className="register__radio-item">
+                <input
+                  type="radio"
+                  id="gender-male"
+                  name="gender"
+                  className="register__radio-input"
+                  checked={formData.gender === '남성'}
+                  onChange={() => handleChange('gender', '남성')}
+                />
+                <label htmlFor="gender-male" className="register__radio-label">남성</label>
               </div>
-
-              <div className="info-pattern-line"></div>
-
-              <section className="info-bottom-section">
-                <div className="info-agree-all-ct">
-                  <div className="info-agree-ct">
-                    <div className="info-agree">개인정보 수집에 동의합니다</div>
-                    <div className="info-add" onClick={() => setShowModal(true)}>[전문보기]</div>
-                  </div>
-                  <input
-                    type="checkbox"
-                    className="info-ip-agree"
-                    checked={formData.agree}
-                    onChange={(e) => handleChange('agree', e.target.checked)}
-                  />
-                </div>
-
-                <div className="info-semi-if">
-                  <ul>
-                    <li>을지대학교 멋쟁이사자처럼 동아리에서 진행하는 드림데이즈 서비스입니다.</li>
-                    <li>작성해주신 정보를 토대로 친구 매칭이 이루어지게 됩니다.</li>
-                    <li>수신 여부에 동의하셔야 서비스를 이용하실 수 있습니다.</li>
-                  </ul>
-                </div>
-              </section>
-
-              <button className="info-sus" type="submit">등록 완료하기</button>
-            </form>
-          </section>
-
-          {/* 모달 */}
-          {showModal && (
-            <div className="info-modal" onClick={() => setShowModal(false)}>
-              <div className="info-modal-ct" onClick={(e) => e.stopPropagation()}>
-                <span className="info-close" onClick={() => setShowModal(false)}>&times;</span>
-                <div className="info-cont">개인정보 제공 및 수집 동의서</div>
-                <br />
-                <div>을지대학교 멋쟁이사자처럼 드림데이즈 HELLO FRIENDS 서비스 이용을 위한 개인정보 수집 및 이용 동의서입니다.
-                  아래 내용을 확인한 후 동의 여부를 선택해 주세요.</div>
-                <div className="info-pf-ct">
-                  <div className="info-section-title">1. 개인정보 수집·이용 목적</div>
-                  <div className="info-section-content">HELLO FRIENDS 서비스는 드림데이즈 행사 기간 동안 친구 찾기 서비스 제공 및 본인 확인을 위해 개인정보를 수집 및 이용합니다.</div>
-
-                  <div className="info-section-title">2. 개인정보 수집항목</div>
-                  <div className="info-section-content">필수 수집 항목: 이름, 나이, 성별, 학과, MBTI, 인스타그램 ID. 자동 수집 항목: 서비스 이용 기록(참여 이력, 추천된 친구 정보). ※ 수집된 정보는 서비스 운영 목적 외 다른 용도로 사용되지 않습니다.</div>
-
-                  <div className="info-section-title">3. 개인정보의 보유 및 이용기간</div>
-                  <div className="info-section-content">수집된 개인정보는 HELLO FRIENDS 서비스 제공 기간 동안 보관 및 이용되며, 드림데이즈 종료 후 2025년 03월 01일에 모든 데이터를 파기합니다. 서비스 이용 중 개인정보 삭제 요청 시 즉시 파기됩니다.</div>
-
-                  <div className="info-section-title">4. 동의 거부 및 동의 거부시 불이익 내용</div>
-                  <div className="info-section-content">HELLO FRIENDS 서비스는 사용자의 개인정보를 제3자에게 제공하지 않습니다.</div>
-
-                  <div className="info-section-title">5. 동의 거부 및 불이익 안내</div>
-                  <div className="info-section-content">사용자는 개인정보 제공에 동의하지 않을 권리가 있으며, 동의하지 않을 경우 HELLO FRIENDS 서비스 이용이 제한될 수 있습니다.</div>
-
-                  <div className="info-section-title">6. 개인정보 보호 및 문의처</div>
-                  <div className="info-section-content">개인정보 보호와 관련된 문의는 을지대학교 멋쟁이사자처럼 운영진에게 문의해 주세요. 문의: 인스타그램 @likelion_eulji</div>
-                </div>
+              <div className="register__radio-item">
+                <input
+                  type="radio"
+                  id="gender-female"
+                  name="gender"
+                  className="register__radio-input"
+                  checked={formData.gender === '여성'}
+                  onChange={() => handleChange('gender', '여성')}
+                />
+                <label htmlFor="gender-female" className="register__radio-label">여성</label>
               </div>
             </div>
-          )}
-        </>
+            {errors.gender && <span className="register__error">{errors.gender}</span>}
+          </div>
+
+          {/* 학과 */}
+          <div className="register__field">
+            <label className="register__label">
+              학과 <span className="register__label-required">*</span>
+            </label>
+            <select
+              className={`register__select ${!formData.department ? 'register__select--placeholder' : ''} ${errors.department ? 'register__select--error' : ''}`}
+              value={formData.department}
+              onChange={(e) => handleChange('department', e.target.value)}
+            >
+              <option value="" hidden>학과를 선택해주세요</option>
+              {DEPARTMENTS.map((dept) => (
+                <option key={dept} value={dept}>{dept}</option>
+              ))}
+            </select>
+            {errors.department && <span className="register__error">{errors.department}</span>}
+          </div>
+
+          {/* MBTI */}
+          <div className="register__field">
+            <label className="register__label">
+              MBTI <span className="register__label-required">*</span>
+            </label>
+            <select
+              className={`register__select ${!formData.mbti ? 'register__select--placeholder' : ''} ${errors.mbti ? 'register__select--error' : ''}`}
+              value={formData.mbti}
+              onChange={(e) => handleChange('mbti', e.target.value)}
+            >
+              <option value="" hidden>MBTI를 선택하세요</option>
+              {MBTI_LIST.map((m) => (
+                <option key={m} value={m}>{m}</option>
+              ))}
+            </select>
+            {errors.mbti && <span className="register__error">{errors.mbti}</span>}
+          </div>
+
+          {/* 한 줄 소개 */}
+          <div className="register__field">
+            <label className="register__label">
+              한 줄 소개 <span className="register__label-required">*</span>
+            </label>
+            <input
+              type="text"
+              className={`register__input ${errors.bio ? 'register__input--error' : ''}`}
+              value={formData.bio}
+              onChange={(e) => handleChange('bio', e.target.value)}
+              maxLength={20}
+              placeholder="본인을 한마디로 소개한다면?"
+            />
+            {errors.bio && <span className="register__error">{errors.bio}</span>}
+          </div>
+
+          {/* 소개받고 싶은 성별 */}
+          <div className="register__field">
+            <label className="register__label">
+              매칭 희망 성별 <span className="register__label-required">*</span>
+            </label>
+            <div className="register__radio-group">
+              <div className="register__radio-item">
+                <input
+                  type="radio"
+                  id="selectGender-male"
+                  name="selectGender"
+                  className="register__radio-input"
+                  checked={formData.selectGender === '남성'}
+                  onChange={() => handleChange('selectGender', '남성')}
+                />
+                <label htmlFor="selectGender-male" className="register__radio-label">남성</label>
+              </div>
+              <div className="register__radio-item">
+                <input
+                  type="radio"
+                  id="selectGender-female"
+                  name="selectGender"
+                  className="register__radio-input"
+                  checked={formData.selectGender === '여성'}
+                  onChange={() => handleChange('selectGender', '여성')}
+                />
+                <label htmlFor="selectGender-female" className="register__radio-label">여성</label>
+              </div>
+            </div>
+            {errors.selectGender && <span className="register__error">{errors.selectGender}</span>}
+          </div>
+
+          {/* Divider */}
+          <div className="register__divider" />
+
+          {/* 개인정보 동의 */}
+          <div className="register__agreement">
+            <div className="register__agreement-row">
+              <div className="register__agreement-left">
+                <div className="register__checkbox">
+                  <input
+                    type="checkbox"
+                    checked={formData.agree}
+                    onChange={(e) => handleChange('agree', e.target.checked)}
+                    aria-label="개인정보 수집 및 이용 동의"
+                  />
+                  <div className="register__checkbox-visual" />
+                </div>
+                <span className="register__agreement-text">개인정보 수집 및 이용 동의</span>
+              </div>
+              <button
+                type="button"
+                className="register__agreement-link"
+                onClick={() => setShowModal(true)}
+              >
+                전문 보기
+              </button>
+            </div>
+            {errors.agree && <span className="register__error">{errors.agree}</span>}
+          </div>
+
+          {/* Submit */}
+          <button type="submit" className="register__submit">
+            등록 완료
+          </button>
+        </form>
+      </div>
+
+      {/* Privacy Modal */}
+      {showModal && (
+        <div className="register__modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="register__modal" onClick={(e) => e.stopPropagation()}>
+            <h3 className="register__modal-title">개인정보 수집 및 이용 동의</h3>
+            <div className="register__modal-body">
+              <p>을지대학교 멋쟁이사자처럼에서 드림데이즈 HELLO FRIENDS 이벤트를 위해 아래와 같이 개인정보를 수집합니다.</p>
+              <ul>
+                <li>수집 항목: 이름, 학번, 인스타그램 ID, 나이, 성별, 학과, MBTI, 한 줄 소개</li>
+                <li>수집 목적: 친구 매칭 서비스 제공</li>
+                <li>보유 기간: 이벤트 종료 후 즉시 파기</li>
+              </ul>
+              <p>위의 개인정보 수집에 동의하지 않으실 수 있으며, 동의하지 않을 경우 서비스 이용이 제한됩니다.</p>
+            </div>
+            <button
+              type="button"
+              className="register__modal-close"
+              onClick={() => setShowModal(false)}
+            >
+              확인
+            </button>
+          </div>
+        </div>
       )}
-    </main>
+    </div>
   )
 }
 

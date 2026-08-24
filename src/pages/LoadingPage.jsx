@@ -32,24 +32,31 @@ function LoadingPage() {
           })
           navigate(`/result?${params.toString()}`)
         } else {
-          console.error('뽑기 결과 없음')
           navigate('/')
         }
       } catch (error) {
         console.error('뽑기 실패:', error)
         navigate('/')
       }
-    }, 2000)
+    }, 2500)
 
     return () => clearTimeout(timer)
   }, [searchParams, navigate])
 
   return (
-    <div className="loading-main">
-      <div className="loading-black">
-        <img className="loading-helloFriends" src="/img/helloFriends.svg" alt="helloFriends" />
-        <img className="loading-loadingPage" src="/img/loadingPage.svg" alt="loadingPage" />
-        <img className="loading-logoLion" src="/img/white_eu.svg" alt="whiteLikeLion" />
+    <div className="loading">
+      <div className="loading__content">
+        <div className="loading__spinner">
+          <div className="loading__spinner-ring" />
+          <div className="loading__spinner-emoji">🎲</div>
+        </div>
+        <h2 className="loading__title">친구를 찾고 있어요</h2>
+        <p className="loading__desc">잠시만 기다려주세요...</p>
+        <div className="loading__dots">
+          <span className="loading__dot" />
+          <span className="loading__dot" />
+          <span className="loading__dot" />
+        </div>
       </div>
     </div>
   )
