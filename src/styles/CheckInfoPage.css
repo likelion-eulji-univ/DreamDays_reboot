@@ -1,0 +1,153 @@
+/* ===== CheckInfoPage ===== */
+
+input:-webkit-autofill {
+  background-color: #ff7710 !important;
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ff7710 inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.ci-main {
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-y: auto;
+  height: 100vh;
+  background-color: #ff7710;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ci-main .orange > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.ci-main .helloFriends {
+  width: clamp(150px, 40vw, 312px);
+  height: auto;
+  margin-bottom: clamp(16px, 3vw, 26px);
+}
+
+.ci-main .checkYourRegister {
+  width: clamp(250px, 70vw, 1084px);
+  max-height: 70px;
+  height: auto;
+  margin-bottom: clamp(20px, 4vw, 40px);
+}
+
+.ci-main .labelStyle {
+  color: #fff;
+  font-size: clamp(14px, 3vw, 32px);
+  margin-bottom: clamp(8px, 1.5vw, 21px);
+  font-family: 'Pretendard-Regular';
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.ci-main .warningName,
+.ci-main .warningNumber {
+  color: #1c1b1a;
+  font-size: clamp(12px, 2vw, 25px);
+  margin: 3px 0;
+}
+
+.ci-main .inputStyle {
+  text-align: center;
+  width: 100%;
+  height: clamp(38px, 6vw, 63px);
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  background-color: #ff7710;
+  color: #fff;
+  font-family: 'Pretendard-Regular';
+  font-weight: 500;
+  font-size: clamp(14px, 3vw, 32px);
+  line-height: 1.2;
+}
+
+.ci-main .inputStyle::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.ci-main form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(30px, 8vw, 96px);
+}
+
+.ci-main .column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: clamp(12px, 2vw, 16px);
+  width: clamp(240px, 60vw, 753px);
+}
+
+.ci-main .column:nth-of-type(2) {
+  margin-bottom: clamp(40px, 8vw, 105px);
+}
+
+.ci-main .ci-button {
+  width: clamp(200px, 60vw, 885px);
+  height: clamp(40px, 8vw, 104px);
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 18px;
+  background: #fff;
+  color: #ff7710;
+  font-family: 'ONE-Mobile-Title';
+  font-size: clamp(14px, 3vw, 36px);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* drawPage (viewInfo) styles */
+.ci-main .viewYourRegister {
+  width: clamp(200px, 50vw, 600px);
+  max-height: 61.05px;
+  height: auto;
+}
+
+.ci-main .info {
+  border-radius: 12px;
+  background: #FFF;
+  width: clamp(240px, 70vw, 885px);
+  height: clamp(100px, 20vw, 200px);
+  margin-bottom: clamp(40px, 8vw, 109px);
+  margin-top: clamp(20px, 4vw, 46px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.ci-main .tags,
+.ci-main .responses {
+  flex-direction: column;
+  margin-right: clamp(15px, 3vw, 30px);
+}
+
+.ci-main .tag {
+  color: #FF7710;
+  font-family: 'ONE-Mobile-Title';
+  font-size: clamp(11px, 2vw, 24px);
+  font-weight: 400;
+  margin: clamp(10px, 2vw, 24px) 0;
+}
+
+.ci-main .response {
+  color: #FF7710;
+  font-family: 'ONE-Mobile-Title';
+  font-size: clamp(14px, 3vw, 36px);
+  font-weight: 400;
+  margin: clamp(8px, 1.5vw, 17px) 0;
+}
